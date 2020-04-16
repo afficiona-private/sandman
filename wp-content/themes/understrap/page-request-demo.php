@@ -7,7 +7,7 @@ get_header();
 
 	<main class="site-main" id="main" role="main">
     
-    <?php get_template_part( 'global-templates/btn-cta' ); ?>
+    <?php get_template_part( 'global-templates/cta' ); ?>
 
 	</main><!-- #main -->
 

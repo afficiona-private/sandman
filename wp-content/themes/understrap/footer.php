@@ -24,6 +24,7 @@ wp_nav_menu(
 ?>
 
 <?php get_template_part( 'global-templates/login-modal' ); ?>
+<?php get_template_part( 'global-templates/demo-success-modal' ); ?>
 
 <footer class="site-footer">
 	<div class="container">

@@ -52,13 +52,14 @@ $btn-font-size-lg: $font-size-base * 1.142857;
 // Modal
 $modal-header-border-width: 0;
 $modal-inner-padding: 40px 50px;
+$modal-content-border-radius: 15px;
 
 $grid-breakpoints: (
   xs: 0,
   sm: 456px,
   md: 789px,
   lg: 999px,
-  xl: 1234px
+  xl: 1280px
 );
 $container-max-widths: (
   sm: 540px,
