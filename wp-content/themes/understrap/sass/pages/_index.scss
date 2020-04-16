@@ -1,0 +1,27 @@
+@import "home/index";
+@import "about/index";
+@import "product/index";
+@import "events/index";
+@import "resources/index";
+@import "features-comparison/index";
+@import "roi/index";
+@import "contact/index";
+
+.roi-page, .features-comparison-page, .invite-page {
+  position: relative;
+  &:before {
+    content: '';
+    background: $primary;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 150px;
+  }
+
+  .entry-header {
+    border-bottom: 1px solid $primary;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+}

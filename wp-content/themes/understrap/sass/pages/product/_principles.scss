@@ -1,0 +1,32 @@
+.principles {
+  margin-bottom: 40px;
+  .item {
+    border: 1px solid #C4D46F;
+    display: flex;
+    padding: 30px 20px;
+    border-radius: 15px;
+    margin-bottom: 30px;
+
+    .icon {
+      width: 180px;
+      flex: 1 0 180px;
+      margin-right: 10px;
+    }
+
+    ul {
+      padding-left: 0;
+      list-style: none;
+
+        li {
+          position: relative;
+          padding-left: 20px;
+          &:before {
+            content: '\2022';
+            color: $primary;
+            position: absolute;
+            left: 0;
+          }
+        }
+    }
+  }
+}

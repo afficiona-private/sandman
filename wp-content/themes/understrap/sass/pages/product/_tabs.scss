@@ -1,0 +1,14 @@
+.wrapper {
+  padding: 0 0 80px;
+  background: $primary;
+  .product-tabs {
+    position: relative;
+    top: -50px;
+    margin-top: 50px;
+    margin-bottom: -30px;
+    .tab {
+      width: 190px;
+      flex: 0 1 190px;
+    }
+  }
+}

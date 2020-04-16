@@ -1,0 +1,16 @@
+.section3 {
+  background: url('~assets/section3-bg.png') no-repeat center right;
+  background-size: contain;
+  margin-top: 48px;
+
+  .wrapper {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 15px 0px 30px #00371E1A;
+    border: 1px solid #D9E8AF;
+    padding: 1.4rem;
+    @include media-breakpoint-up(sm) {
+      padding: 82px;
+    }
+  }
+}

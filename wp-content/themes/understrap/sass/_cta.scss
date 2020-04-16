@@ -1,0 +1,96 @@
+$form-label-offset: 191px;
+
+.cta {
+  background: url('http://localhost:8888/wordpress/wp-content/uploads/2020/04/Mask-Group-29.png') no-repeat;
+  background-size: cover;
+  position: relative;
+
+  .container {
+    position: relative;
+    z-index: 2;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    background: rgba($primary, 0.8);
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .wrapper {
+    padding: 30px 0;
+    @include media-breakpoint-up(md) {
+      padding: 90px 0 0;
+      margin-bottom: -1.2rem;
+    }
+  }
+}
+
+.form-wrapper {
+  background: $white;
+  padding: 1.4rem 1rem;
+  border-radius: 16px;
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  z-index: 1;
+
+  .wpcf7 {
+    max-width: 100%;
+  }
+
+  &.invite {
+    box-shadow: none;
+    padding: 0;
+    .form-group {
+      label {
+        text-align: right;
+      }
+    }
+  }
+
+  @include media-breakpoint-up(sm) {
+    padding: 2rem;
+  }
+
+  .form-group {
+    display: block;
+    margin-bottom: 1.2rem;
+    @include media-breakpoint-up(sm) {
+      display: flex;
+      margin-bottom: 1rem;
+    }
+    label {
+      flex: 0 1 $form-label-offset;
+      @include media-breakpoint-up(sm) {
+        width: $form-label-offset;
+        margin-right: 1rem;
+      }
+    }
+    .wpcf7-form-control-wrap {
+      flex: 1;
+      .wpcf7-textarea {
+        height: 100px;
+      }
+    }
+    div {
+      &:last-child {
+        flex: 1 1 auto;
+      }
+    }
+  }
+
+  .offset {
+    @include media-breakpoint-up(sm) {
+      padding-left: $form-label-offset;
+      margin-left: 1rem;
+    }
+  }
+
+  span.wpcf7-list-item {
+    margin-left: 0;
+  }
+}

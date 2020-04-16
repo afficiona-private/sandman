@@ -1,0 +1,65 @@
+$table-border-color: #BCBCBC;
+
+.roi-page {
+
+  .title {
+    background: $gray-600;
+    margin-bottom: 0;
+    color: $white;
+    padding: .6rem 0.7rem;
+    border-left: 5px solid $black;
+  }
+
+  // Table
+  .entry-content {
+    .table-head {
+      border-right: 1px solid $table-border-color;
+      border-left: 1px solid $table-border-color;
+      .head {
+        color: $black;
+        font-weight: 600;
+        border-right: 1px solid $table-border-color;
+        border-bottom: 1px solid $table-border-color;
+        &.last {
+          border-right: none;
+        }
+      }
+    }
+
+    .feature {
+      border-right: 1px solid $table-border-color;
+      border-bottom: 1px solid $table-border-color;
+      border-left: 1px solid $table-border-color;
+
+      &:nth-child(odd) {
+        background: $gray-100;
+      }
+
+      &-entry {
+        border-bottom: 1px solid $table-border-color;
+        &:last-child {
+          border-bottom: none;
+          color: $secondary;
+        }
+      }
+      .feature-item {
+        border-right: 1px solid $table-border-color;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 7px;
+        &:last-child {
+          border-bottom: none;
+        }
+        &.last {
+          border-right: none;
+        }
+
+        &.detail {
+          justify-content: flex-start;
+        }
+      }
+    }
+  }
+}

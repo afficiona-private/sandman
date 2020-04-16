@@ -1,0 +1,17 @@
+.company-cards {
+  .each {
+    margin: 0 0 24px;
+    height: 85px;
+    background: $white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 0px 10px rgba($black, 0.1);
+    border-radius: 6px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}

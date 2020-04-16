@@ -1,0 +1,23 @@
+  .site-footer {
+    background: #2A3731;
+
+    .footer-menu {
+      padding: 0;
+      .menu-item {
+        margin-top: 0.5rem;
+        margin-bottom: 1rem;
+        @include media-breakpoint-up(sm) {
+          margin-top: 0.5rem;
+          margin-bottom: 3rem;
+        }
+        a {
+          color: $white;
+          opacity: 0.8;
+          transition: .2s all;
+          &:hover {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }

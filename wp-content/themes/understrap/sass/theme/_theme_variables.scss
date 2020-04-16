@@ -1,0 +1,68 @@
+// Use this file to overwrite the basic Bootstrap variables and add your own variables
+// To overwrite a Bootstrap variable you don´t have to touch the Bootstrap folder.
+// Just copy a variable from src/sass/bootstrap4/_variables.scss, paste it here and edit the value.
+
+
+// Include Bootstrap and BootstrapVue SCSS files
+
+// Colors
+$white: #ffffff;
+$primary: #2CA870;
+$secondary: #FF5656;
+$headings-color: #182100;
+$body-color: #333333;
+$text-muted: #E1E1E1;
+$gray-100: #F9F9F9;
+$gray-600: #8F8F8F;
+
+//grid
+$grid-gutter-width: 24px;
+
+$font-family-base:            Circular Book !default;
+$headings-font-family:        Circular !default;
+$headings-font-weight:        600 !default;
+$headings-line-height:        1.45 !default;
+$line-height-base:            1.94 !default;
+
+//font sizes
+$font-size-base:              0.875rem;
+$h1-font-size:                $font-size-base * 4.28571 !default;
+$h2-font-size:                $font-size-base * 2 !default;
+$h3-font-size:                $font-size-base * 1.75 !default;
+$h4-font-size:                $font-size-base * 1.5 !default;
+$h5-font-size:                $font-size-base * 1.25 !default;
+$h6-font-size:                $font-size-base * 1.142857 !default;
+
+// nav
+$navbar-padding-y: 1.094rem;
+$navbar-padding-x: 0;
+$navbar-nav-link-padding-x: 15px;
+$navbar-dark-color: rgba($white, 1);
+$navbar-dark-hover-color: $secondary;
+
+//Buttons
+$btn-border-radius: 25px;
+$btn-border-radius-lg: 25px;
+$btn-border-radius-sm: 25px;
+$btn-font-size: 14px;
+$btn-padding-y-lg: 0.6875rem;
+$btn-padding-x-lg: 2rem;
+$btn-font-size-lg: $font-size-base * 1.142857;
+
+// Modal
+$modal-header-border-width: 0;
+$modal-inner-padding: 40px 50px;
+
+$grid-breakpoints: (
+  xs: 0,
+  sm: 456px,
+  md: 789px,
+  lg: 999px,
+  xl: 1234px
+);
+$container-max-widths: (
+  sm: 540px,
+  md: 770px,
+  lg: 960px,
+  xl: 1280px
+) !default;
