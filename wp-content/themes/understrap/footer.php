@@ -25,7 +25,9 @@ wp_nav_menu(
 
 <?php get_template_part( 'global-templates/login-modal' ); ?>
 <?php get_template_part( 'global-templates/demo-success-modal' ); ?>
-
+<?php if ($post->post_name == 'careers') {
+	get_template_part( 'global-templates/job-apply-modal' );
+} ?>
 <footer class="site-footer">
 	<div class="container">
 		<div class="row">

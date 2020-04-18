@@ -1,4 +1,17 @@
 .section5 {
-  background: url('http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-425.png') no-repeat left top;
+  padding: 80px 0;
+  background: url('http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-425.png') no-repeat;
   background-size: 50%;
+  @include media-breakpoint-down(sm) {
+    background: none;
+    padding: 30px 0;
+  }
+
+  .poster {
+    width: 100%;
+    max-width: 595px;
+    @include media-breakpoint-up(sm) {
+      display: none;
+    }
+  }
 }

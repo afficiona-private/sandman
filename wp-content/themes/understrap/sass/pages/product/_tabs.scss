@@ -6,6 +6,10 @@
     top: -50px;
     margin-top: 50px;
     margin-bottom: -30px;
+    @include media-breakpoint-down(sm) {
+      margin-top: 30px;
+      top: -40px;
+    }
     .tab {
       width: 190px;
       flex: 0 1 190px;

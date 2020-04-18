@@ -4,7 +4,7 @@ defined( 'ABSPATH' ) || exit;
 get_header();
 ?>
 
-<div class="wrapper invite-page" id="full-width-page-wrapper">
+<div class="wrapper invite-page general-page" id="full-width-page-wrapper">
 
 	<main class="site-main" id="main" role="main">
     

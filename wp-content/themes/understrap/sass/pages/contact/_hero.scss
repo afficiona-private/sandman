@@ -1,4 +1,12 @@
 .hero {
-  padding: 110px 0;
-  background: $secondary;
+  padding: 50px 0;
+  position: relative;
+  
+  &-bg {
+    background: $primary;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
 }

@@ -43,7 +43,7 @@
   // submit button, inherit .btn and .btn-outline-primary classes.
   input[type=submit] {
     @extend .btn;
-    @extend .btn-outline-primary;
+    @extend .btn-secondary;
   }
 
   .wpcf7-form {
@@ -57,6 +57,15 @@
     label {
       width: 100%;
     }
+
+    .ajax-loader {
+      position: absolute;
+      background: none;
+      right: -24px;
+      bottom: 14px;
+      color: $secondary;
+      animation: fa-spin 1s infinite linear;
+    }
   }
 
   // not valid tip for each control
@@ -69,5 +78,6 @@
     @extend .form-control;
     color: theme-color("danger");
     border: 1px solid $gray-200;
+    height: auto;
   }
 }

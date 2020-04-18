@@ -20,6 +20,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     
     <!-- Hero -->
     <div class="hero">
+      <img class="poster mb-4" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-426@2x.png" />
       <div class="container">
         <div class="row">
           <div class="col-lg-6 offset-lg-6">
@@ -44,13 +45,13 @@ $container = get_theme_mod( 'understrap_container_type' );
     <div class="wrapper text-center">
       <div class="container">
         <div class="product-tabs">
-          <div class="row">
-            <div class="col-lg-3 offset-3">
+          <div class="row justify-content-center no-gutters">
+            <div class="col-6 col-lg-3">
               <a class="tab" href="">
                   <img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-405@2x.png" alt="">
                 </a>
             </div>
-            <div class="col-lg-3">
+            <div class="col-6 col-lg-3">
               <a class="tab" href="">
                   <img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-405@2x.png" alt="">
                 </a>
@@ -82,8 +83,8 @@ $container = get_theme_mod( 'understrap_container_type' );
     </div>
     <div class="principles">
       <div class="container">
-        <div class="row">
-          <div class="col-lg-10 offset-lg-1">
+        <div class="row justify-content-center">
+          <div class="col-lg-10">
             <?php 
 
               $posts = get_field('principles_list');
@@ -101,7 +102,7 @@ $container = get_theme_mod( 'understrap_container_type' );
                     <img class="img-fluid" src=<?php echo $thumb_url  ?> alt="">
                   </div>
                   <div class="content">
-                    <h4 class="text-primary"><?php the_title() ?></h4>
+                    <h4 class="text-primary mb-3 mb-sm-0"><?php the_title() ?></h4>
                     <?php the_content(); ?>
                   </div>
                 </div>
@@ -116,11 +117,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <!-- CTA -->
     <div class="container mb-5">
-      <div class="row">
-        <div class="col-3 offset-lg-3">
-          <a class="btn btn-primary btn-lg btn-block" href="">Compare Digismart & Pro</a>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-3">
+          <a class="btn btn-primary btn-lg btn-block mb-3 mb-lg-0" href="">Compare Digismart & Pro</a>
         </div>
-        <div class="col-3">
+        <div class="col-12 col-lg-3">
           <a class="btn btn-primary btn-lg btn-block" href="">Check ROI</a>
         </div>
       </div>
@@ -191,14 +192,14 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <!-- CTA -->
     <div class="container mt-5 mb-5">
-      <div class="row">
-        <div class="col-2 offset-lg-3">
-          <a class="btn btn-outline-primary btn-block" href="">Compare Digismart & Pro</a>
+      <div class="row justify-content-center">
+        <div class="col-12 col-lg-3">
+          <a class="btn btn-outline-primary btn-block mb-3 mb-lg-0" href="">Compare Digismart & Pro</a>
         </div>
-        <div class="col-2">
-          <a class="btn btn-primary btn-block" href="">Request a Demo</a>
+        <div class="col-12 col-lg-2">
+          <a class="btn btn-primary btn-block mb-3 mb-lg-0" href="">Request a Demo</a>
         </div>
-        <div class="col-2">
+        <div class="col-12 col-lg-2">
           <a class="btn btn-outline-primary btn-outline btn-block" href="">Check ROI</a>
         </div>
       </div>

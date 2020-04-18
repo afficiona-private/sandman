@@ -1,0 +1,31 @@
+.faqs-wrapper {
+  
+  .each {
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid $gray-300;
+    &:last-child {
+      border: none;
+    }
+    &-title {
+      font-weight: normal;
+      cursor: pointer;
+      position: relative;
+      color: $gray-800;
+      &:before {
+        content: '\f068';
+        font-family: 'FontAwesome';
+        position: absolute;
+        right: 0;
+        top: 0;
+        color: $gray-600;
+      }
+
+      &.collapsed {
+        &:before {
+          content: '\f067';
+        }
+      }
+    }
+  }
+}

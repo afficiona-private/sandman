@@ -4,14 +4,24 @@ $table-border-color: #BCBCBC;
 
   // Tabel
   .entry-content {
+    .table-wrapper {
+      overflow: auto;
+      border-right: 1px solid $table-border-color;
+      border-left: 1px solid $table-border-color;
+      .table-content {
+        @include media-breakpoint-down(sm) {
+          width: 1020px; // This is the max width table can attain as per the current container widths setup
+        }
+      }
+    }
     .head {
       color: $white;
     }
 
     .feature {
-      border-right: 1px solid $table-border-color;
+      border-right: 1px solid none;
       border-bottom: 1px solid $table-border-color;
-      border-left: 1px solid $table-border-color;
+      border-left: 1px solid none;
 
       &:nth-child(odd) {
         background: $gray-100;

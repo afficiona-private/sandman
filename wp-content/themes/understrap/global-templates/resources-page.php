@@ -24,12 +24,12 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h1 class="text-white h3 text-center"><?php echo $cat_name; ?></h1>
+            <h1 class="h3 text-center title"><?php echo $cat_name; ?></h1>
           </div>
         </div>
 
         <!-- Cards -->
-        <div class="row mt-5">
+        <div class="row mt-4 mt-lg-5">
           <?php
 
             $posts = get_posts( array(
@@ -47,7 +47,9 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
                   <div class="card">
                     <img class="img-fluid" src="<?php echo $thumb_url; ?>" alt="">
                     <div class="d-flex justify-content-between align-items-center mt-3">
-                      <p class="m-0">SANDMAN Product Brochure</p>
+                      <p class="m-0">
+                        <?php the_title(); ?>
+                      </p>
                       <?php
                         if (sizeof($file)) {
                           ?>
@@ -56,6 +58,13 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
                         }
                       ?>
                     </div>
+                    <?php
+                      if ($cat_slug == 'case-studies') {
+                        ?>
+                          <a class="d-inline-block mt-4 mt-sm-auto" href="<?php the_permalink(); ?>">Read More</a>
+                        <?php
+                      }
+                    ?>
                   </div>
                 </div>
               <?php

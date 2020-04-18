@@ -14,6 +14,7 @@ $body-color: #333333;
 $text-muted: #E1E1E1;
 $gray-100: #F9F9F9;
 $gray-600: #8F8F8F;
+$link-color: $secondary;
 
 //grid
 $grid-gutter-width: 24px;
@@ -39,6 +40,10 @@ $navbar-padding-x: 0;
 $navbar-nav-link-padding-x: 15px;
 $navbar-dark-color: rgba($white, 1);
 $navbar-dark-hover-color: $secondary;
+$navbar-dark-toggler-border-color: transparent;
+$navbar-light-toggler-border-color: transparent;
+$navbar-light-toggler-icon-bg: none;
+$navbar-dark-toggler-icon-bg: none;
 
 //Buttons
 $btn-border-radius: 25px;
@@ -48,6 +53,12 @@ $btn-font-size: 14px;
 $btn-padding-y-lg: 0.6875rem;
 $btn-padding-x-lg: 2rem;
 $btn-font-size-lg: $font-size-base * 1.142857;
+
+// Input
+$input-bg:          #F7F7F7;
+$input-border-color:  #EBEBEB;
+$input-border-radius: 10px;
+$input-focus-box-shadow: none;
 
 // Modal
 $modal-header-border-width: 0;

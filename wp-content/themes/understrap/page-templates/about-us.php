@@ -44,10 +44,13 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="container">
           <div class="row">
             <div class="col-lg-5">
-              <img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-81.png" alt="data right image">
+              <div class="d-flex flex-column align-items-center">
+                <img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-81.png" alt="data right image">
+                <h2 class="text-primary mt-4">Good Data + Right Technology</h2>
+              </div>
             </div>
             <div class="col-lg-7">
-              <p>
+              <p class="mt-4 mt-sm-0">
                 Founded by Mr. Deepak Chowdhary, a first generation entrepreneur - MPM Private Limited; our parent company has been the pioneer and India's largest manufacturer of engineered Lustrous Carbon Additives for use in foundry green sand molding practice, since 1984.
                 <br>
                 In our history spanning 35+ years, we have relentlessly focused on innovating both in product and application services in the green sand eco-system of iron foundries.
@@ -70,7 +73,11 @@ $container = get_theme_mod( 'understrap_container_type' );
                   <br>
                   SANDMAN helps to optimise their foundry green sand system with a view to reducing casting defects and optimise consumption of related additives like Bentonite, Silica Sand, Lustrous Carbon Formers
                 </p>
-                <a class="btn btn-secondary" href="">Learn more about Sandman</a>
+                <div class="row justify-content-center">
+                  <div class="col-12 col-sm-4">
+                    <a class="btn btn-secondary btn-block mt-4 mt-sm-0" href="">Learn more about Sandman</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -96,10 +103,11 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <!-- Section 5 -->
       <div class="section5">
+        <img class="poster mb-4" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-425.png" />
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-6">
-              <h2 class="text-primary mb-4 mt-5">Where We're Going</h2>
+              <h2 class="text-primary mb-4 mt-0 mt-sm-5">Where We're Going</h2>
               <p>
                 We are consistently striving to bring more value to this industry by foraying into different processes, developing newer models which provide even more granularity with which better castings can be produced and just the way foundries look at their data.
                 <br>

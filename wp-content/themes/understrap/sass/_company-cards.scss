@@ -1,7 +1,9 @@
 .company-cards {
+  @include media-breakpoint-down(sm) {
+    justify-content: center;
+  }
   .each {
     margin: 0 0 24px;
-    height: 85px;
     background: $white;
     display: flex;
     align-items: center;

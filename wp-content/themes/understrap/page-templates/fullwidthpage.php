@@ -1,54 +1,44 @@
 <?php
 /**
- * Template Name: Full Width Page
- *
- * Template for displaying a page without sidebar even if a sidebar widget is published.
+ * Template Name: General Template
  *
  * @package understrap
  */
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
 get_header();
-$container = get_theme_mod( 'understrap_container_type' );
 ?>
 
-<?php if ( is_front_page() ) : ?>
-  <?php get_template_part( 'global-templates/hero' ); ?>
-<?php endif; ?>
+<div class="wrapper general-page" id="full-width-page-wrapper">
 
+	<main class="site-main" id="main" role="main">
+    
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <article class="contained-page-article py-4">
+						<div class="row justify-content-center">
+							<div class="col-12 col-md-10">
+								<header class="entry-header">
+									<h2 class="text-primary text-center font-weight-normal"><?php the_title(); ?></h2>
+								</header>
 
-<div class="wrapper" id="full-width-page-wrapper">
+								<div class="entry-content">
+									<?php while ( have_posts() ) : the_post(); ?>
 
-	<div class="<?php echo esc_attr( $container ); ?>" id="content">
+										<?php the_content(); ?>
 
-		<div class="row">
+									<?php endwhile; // end of the loop. ?>
+								</div>
+							</div>
+						</div>
+          </article>
+        </div>
+      </div>
+    </div>
 
-			<div class="col-md-12 content-area" id="primary">
-
-				<main class="site-main" id="main" role="main">
-
-					<?php while ( have_posts() ) : the_post(); ?>
-
-						<?php get_template_part( 'loop-templates/content', 'page' ); ?>
-
-						<?php
-						// If comments are open or we have at least one comment, load up the comment template.
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-						?>
-
-					<?php endwhile; // end of the loop. ?>
-
-				</main><!-- #main -->
-
-			</div><!-- #primary -->
-
-		</div><!-- .row end -->
-
-	</div><!-- #content -->
+	</main><!-- #main -->
 
 </div><!-- #full-width-page-wrapper -->
 

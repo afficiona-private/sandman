@@ -7,10 +7,20 @@
     border-radius: 15px;
     margin-bottom: 30px;
 
+    @include media-breakpoint-down(sm) {
+      display: block;
+      &:last-child {
+        margin-bottom: 0px;
+      }
+    }
+
     .icon {
       width: 180px;
       flex: 1 0 180px;
       margin-right: 10px;
+      @include media-breakpoint-down(sm) {
+        margin: 0 auto;
+      }
     }
 
     ul {

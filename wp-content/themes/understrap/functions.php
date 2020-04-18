@@ -45,7 +45,7 @@ function modify_link_in_social_menu_objects( $items, $args ) {
 add_filter( 'wp_nav_menu_objects', 'modify_link_in_social_menu_objects', 10, 2 );
 
 function modify_login_in_primary_menu( $atts, $item, $args ) {
-	if ($args->theme_location == 'primary' && $atts['href'] == '#login') {
+	if ($atts['href'] == '#login') {
 		$atts['data-toggle'] = 'modal';
 		$atts['data-target'] = '#loginModal';
 		return $atts;

@@ -1,10 +1,4 @@
 <?php
-/**
- * Template Name: Contact Page Layout
- *
- * @package understrap
- */
-
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 $args = array(
@@ -19,19 +13,24 @@ get_header();
     
     <!-- Hero -->
     <div class="hero">
+      <div class="hero-bg" id="contactPageHeroBg"></div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-5 text-white">
-            <h1 class="text-white"><?php the_title(); ?></h1>
-            <?php
-              while ( have_posts() ) : the_post(); ?>
-                <?php the_content(); ?> 
-              <?php
-              endwhile;
-              wp_reset_query();
-            ?>
+          <div class="col-lg-4 text-white">
+            <div id="contactPageHero">
+              <h1 class="text-white mb-4"><?php the_title(); ?></h1>
+              <div class="h5 font-weight-normal text-white mb-4 mb-md-0">
+                <?php
+                  while ( have_posts() ) : the_post(); ?>
+                    <?php the_content(); ?> 
+                  <?php
+                  endwhile;
+                  wp_reset_query();
+                ?>
+              </div>
+            </div>
           </div>
-          <div class="col-lg-7">
+          <div class="col-lg-7 offset-lg-1">
             <div class="form-wrapper">
               <?php echo do_shortcode( '[contact-form-7 id="258" title="Contact Us"]' ); ?>
             </div>
@@ -49,8 +48,8 @@ get_header();
             <h3 class="text-primary mb-4">Trusted By</h3>
             <?php get_template_part( 'global-templates/company-cards' ); ?>
           </div>
-          <div class="col-lg-3 offset-lg-1">
-            <h3 class="text-primary mb-4">Follow Us</h3>
+          <div class="col-9 col-md-3 offset-lg-1">
+            <h3 class="text-primary mb-4 mt-4 mt-md-0">Follow Us</h3>
             <?php get_template_part( 'global-templates/follow' ); ?>
           </div>
         </div>
@@ -59,20 +58,26 @@ get_header();
     <!-- Section 2 ends -->
 
     <!-- Locations -->
-    <div class="locations">
+    <div class="locations py-5">
       <div class="container">
         <div class="row">
           <?php
             while ( $locationsQuery->have_posts() ) : $locationsQuery->the_post();
               ?>
                 <div class="col-lg-6">
-                  <h4 class="text-primary"><?php the_title(); ?></h4>
-                  <div class="location-box">
-                    <div class="map">
-                      <iframe src="<?php the_field('location_embed_link') ?>" width="300" height="300" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
-                    </div>
-                    <div class="content">
-                      <?php the_content(); ?>
+                  <h4 class="text-color font-weight-normal"><?php the_title(); ?></h4>
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="location-box mb-4 mb-md-0">
+                        <div class="row no-gutters">
+                          <div class="col-12 col-md-6">
+                            <iframe src="<?php the_field('location_embed_link') ?>" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+                          </div>
+                          <div class="col-12 col-md-6 p-3 p-md-4">
+                            <?php the_content(); ?>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>

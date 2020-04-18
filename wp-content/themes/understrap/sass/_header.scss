@@ -1,0 +1,5 @@
+.navbar-brand {
+  @include media-breakpoint-down(sm) {
+    margin-left: 8px;
+  }
+}
