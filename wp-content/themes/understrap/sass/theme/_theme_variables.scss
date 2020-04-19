@@ -14,6 +14,7 @@ $body-color: #333333;
 $text-muted: #E1E1E1;
 $gray-100: #F9F9F9;
 $gray-600: #8F8F8F;
+$dark: #000;
 $link-color: $secondary;
 
 //grid
@@ -37,13 +38,16 @@ $h6-font-size:                $font-size-base * 1.142857 !default;
 // nav
 $navbar-padding-y: 1.094rem;
 $navbar-padding-x: 0;
-$navbar-nav-link-padding-x: 15px;
+$navbar-nav-link-padding-x: 30px;
 $navbar-dark-color: rgba($white, 1);
 $navbar-dark-hover-color: $secondary;
 $navbar-dark-toggler-border-color: transparent;
 $navbar-light-toggler-border-color: transparent;
 $navbar-light-toggler-icon-bg: none;
 $navbar-dark-toggler-icon-bg: none;
+$navbar-dark-active-color: $secondary;
+$nav-link-padding-y: 0.9rem;
+$navbar-brand-padding-y: 0;
 
 //Buttons
 $btn-border-radius: 25px;

@@ -9,7 +9,6 @@
 
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
-
 get_header();
 ?>
 <div class="wrapper home" id="full-width-page-wrapper">
@@ -17,23 +16,22 @@ get_header();
 	<main class="site-main" id="main" role="main">
 
 		<!-- hero -->
-		<div class="hero">
+		<div class="hero" id="homePageHero">
+			<img class="hero-bg" id="homePageHeroBg" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Homepage-hero.png" alt="">
 			<div class="container h-100">
-					<div class="row h-100">
-						<div class="col-lg-7 col-12 d-flex flex-column">
-							<h1 class="title text-white pr-sm-5">
+				<div class="row h-100">
+					<div class="col-lg-7 col-xl-6 col-12 d-flex flex-column">
+						<div class="hero-content">
+							<h1 class="title text-white pr-xl-5 mb-lg-5">
 								Optimise your Foundry by moving from <br> ART to ANALYTICS
 							</h1>
-							<div class="row">
-								<div class="col-lg-10">
-									<h2 class="description text-white">
-										Reducing Rejections and Optimising Additive Consumption by Data Analytics, Machine Learning and IOT – The Next Dimension in Foundry 4.0
-									</h2>
-								</div>
-							</div>
+							<h2 class="description text-white">
+								Reducing Rejections and Optimising Additive Consumption by Data Analytics, Machine Learning and IOT – The Next Dimension in Foundry 4.0
+							</h2>
 							<?php get_template_part( 'global-templates/btn-cta' ); ?>
 						</div>
 					</div>
+				</div>
 			</div>
 		</div>
 		<!-- hero ends -->

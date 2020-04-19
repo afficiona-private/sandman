@@ -44,7 +44,7 @@ function modify_link_in_social_menu_objects( $items, $args ) {
 }
 add_filter( 'wp_nav_menu_objects', 'modify_link_in_social_menu_objects', 10, 2 );
 
-function modify_login_in_primary_menu( $atts, $item, $args ) {
+function modify_login_in_menu( $atts, $item, $args ) {
 	if ($atts['href'] == '#login') {
 		$atts['data-toggle'] = 'modal';
 		$atts['data-target'] = '#loginModal';
@@ -52,4 +52,5 @@ function modify_login_in_primary_menu( $atts, $item, $args ) {
 	}
 	return $atts;
 }
-add_filter( 'nav_menu_link_attributes', 'modify_login_in_primary_menu', 10, 3 );
+add_filter( 'nav_menu_link_attributes', 'modify_login_in_menu', 10, 3 );
+

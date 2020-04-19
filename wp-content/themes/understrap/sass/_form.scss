@@ -1,6 +1,4 @@
 
-$form-label-offset: 191px;
-
 .form-wrapper {
   background: $white;
   border-radius: 16px;
@@ -35,9 +33,7 @@ $form-label-offset: 191px;
       margin-bottom: 5px;
     }
     label {
-      flex: 0 1 $form-label-offset;
       @include media-breakpoint-up(sm) {
-        width: $form-label-offset;
         margin-right: 1rem;
       }
     }
@@ -47,16 +43,10 @@ $form-label-offset: 191px;
         height: 100px;
       }
     }
-    div {
-      &:last-child {
-        flex: 1 1 auto;
-      }
-    }
   }
 
   .offset {
     @include media-breakpoint-up(sm) {
-      padding-left: $form-label-offset;
       margin-left: 1rem;
     }
   }

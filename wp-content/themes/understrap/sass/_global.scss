@@ -6,42 +6,21 @@ a {
 
 .btn {
   text-transform: uppercase;
-}
 
-// Navbar
-.navbar-collapse {
-  @include media-breakpoint-down(sm) {
-    .navbar-nav li {
-      padding: 5px 20px;
-    }
-  }
-}
-
-.navbar-brand {
-  @include media-breakpoint-down(sm) {
-    img {
-      width: 124px;
-    }
-  }
-}
-
-.navbar-toggler {
-  &:focus {
-    outline: none;
-  }
-  &-icon {
+  &-loading {
+    color: transparent !important;
+    transition: 0s all;
+    position: relative;
     &:before {
-      content: '\f0c9';
+      content: '\f1ce';
       font-family: FontAwesome;
-      font-size: 30px;
-      opacity: 0.6;
-    }
-  }
-  &:not(.collapsed) {
-    .navbar-toggler-icon {
-      &:before {
-        content: '\f00d';
-      }
+      position: absolute;
+      top: 0;
+      left: 50%;
+      margin-left: -10px;
+      font-size: 20px;
+      color: $white;
+      animation: fa-spin 1s infinite linear;
     }
   }
 }

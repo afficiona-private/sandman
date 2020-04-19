@@ -40,8 +40,42 @@
     @extend .form-control;
   }
 
+  .wpcf7-checkbox {
+    .wpcf7-list-item-label {
+      padding-left: 30px;
+      position: relative;
+      cursor: pointer;
+      &:before {
+        content: '\f096';
+        position: absolute;
+        left: 0;
+        top: 0;
+        font-size: 20px;
+        line-height: 1;
+        font-family: FontAwesome;
+        transition: .2s all;
+      }
+      &:hover {
+        &:before {
+          color: $primary;
+        }
+      }
+    }
+    input {
+      display: none;
+      &:checked {
+        & ~ .wpcf7-list-item-label {
+          &:before {
+            content: '\f046';
+            color: $primary;
+          }
+        }
+      }
+    }
+  }
+
   // submit button, inherit .btn and .btn-outline-primary classes.
-  input[type=submit] {
+  .wpcf7-submit {
     @extend .btn;
     @extend .btn-secondary;
   }
@@ -56,15 +90,14 @@
     // let labels be 100%
     label {
       width: 100%;
+      @include media-breakpoint-up(md) {
+        padding-top: 14px;
+        line-height: 1;
+      }
     }
 
     .ajax-loader {
-      position: absolute;
-      background: none;
-      right: -24px;
-      bottom: 14px;
-      color: $secondary;
-      animation: fa-spin 1s infinite linear;
+      display: none; // Don't need this :P
     }
   }
 
@@ -73,11 +106,32 @@
     color: theme-color("danger");
   }
 
+  .wpcf7-not-valid {
+    border-color: theme-color("danger");
+  }
+
   // validation errors ourput bottom of form
   .wpcf7-validation-errors {
-    @extend .form-control;
     color: theme-color("danger");
-    border: 1px solid $gray-200;
+    border: none;
+    padding: 0;
     height: auto;
+    margin: 0;
+    margin-top: 0.7rem;
+    @include media-breakpoint-up(md) {
+      @include make-col(9);
+      @include make-col-offset(3, $columns: $grid-columns);
+    }
+  }
+}
+
+.cta {
+  .wpcf7 {
+    .wpcf7-validation-errors {
+      @include media-breakpoint-up(md) {
+        @include make-col(8);
+        @include make-col-offset(4, $columns: $grid-columns);
+      }
+    }
   }
 }
