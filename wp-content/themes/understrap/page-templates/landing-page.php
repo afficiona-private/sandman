@@ -40,10 +40,10 @@ get_header();
 		<div class="section2">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-4 offset-lg-1">
+					<div class="col-lg-4 offset-lg-1 wow fadeIn" data-wow-delay=".5s">
 						<img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Browser-Screenshots@2x.png" alt="">
 					</div>
-					<div class="col-lg-6">
+					<div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
 						<h2 class="text-primary mb-3">The world’s first Data Analytics software for Foundries</h2>
 						<p>
 							SANDMAN ™ is a cloud-based Predictive and Prescriptive Data Analytics driven decision support system which employs powerful mathematical modelling and algorithms for optimisation of a foundry's green sand system. It's powerful data correlation capabilities and unique SANDMIX algorithm helps foundries achieve a dose-by-need additive prediction based on its consumption, sand properties and casting data over long period of time and continuous data sets thereby optimizing additive consumption reducing rejections and associated costs. This SaaS delivered software is backed by a team of experienced foundry experts, data scientists, and developers.
@@ -54,7 +54,7 @@ get_header();
 							class="text-uppercase text-secondary"
 						>
 							Explore our product
-					</a>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -189,57 +189,9 @@ get_header();
 		<!-- Section 6 -->
 		<div class="section6">
 			<div class="container">
-				<!-- title -->
-				<div class="row">
-					<div class="col-lg-12">
-						<h2 class="text-primary h3 text-center mb-5">Here are few insights for you</h2>
-					</div>
-				</div>
-				<!-- title ends -->
 
 				<!-- youtube insights -->
-				<div class="row">
-					<div class="col-lg-5 offset-lg-1">
-						<img class="w-100" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Image-5@2x.png" alt="" />
-						<div class="p-3">
-							<p>Sandman: Foundry Data to Information & Insights.</p>
-						</div>
-					</div>
-					<div class="col-lg-6">
-						<div class="media-item">
-							<div class="row">
-								<div class="col-lg-4">
-									<img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Image-5@2x.png" alt="" />
-								</div>
-								<div class="col-lg-8 d-flex align-items-center">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-								</div>
-							</div>
-						</div>
-						<div class="media-item">
-							<div class="row">
-								<div class="col-lg-4">
-									<img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Image-5@2x.png" alt="" />
-								</div>
-								<div class="col-lg-8 d-flex align-items-center">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-								</div>
-							</div>
-						</div>
-						<div class="media-item">
-							<div class="row">
-								<div class="col-lg-4">
-									<img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Image-5@2x.png" alt="" />
-								</div>
-								<div class="col-lg-8 d-flex align-items-center">
-									<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-								</div>
-							</div>
-						</div>
-
-						<a class="text-dark text-sm-right d-block mt-4 text-uppercase" href="">Visit our YouTube channel for more</a>
-					</div>
-				</div>
+				<?php get_template_part( 'global-templates/insights' ); ?>
 				<!-- youtube insights ends -->
 
 				<!-- divider -->
@@ -255,19 +207,21 @@ get_header();
 					<?php
 						$query = new WP_Query( 'cat=insights&posts_per_page=4' );
 								
+						$itemIndex = 0;
 						while ( $query->have_posts() ) : $query->the_post();
 						$thumb_id = get_post_thumbnail_id();
 						$thumb_url_array = wp_get_attachment_image_src($thumb_id, '1000', true);
 						$thumb_url = $thumb_url_array[0];
+						$animDelay = (4 * $itemIndex) / 10;
 							?>
-								<div class="col-lg-3 mb-4 mb-sm-0">
+								<div class="col-lg-3 mb-4 mb-sm-0 wow fadeIn" data-wow-delay="<?php echo $animDelay; ?>s">
 									<div class="article-item p-4">
 										<h3 class="h5 mb-4"><?php the_title() ?></h3>
 										<?php the_excerpt() ?>
 									</div>
 								</div>
 							<?php
-							$index++;
+							$itemIndex++;
 						endwhile;
 
 						wp_reset_postdata(); 

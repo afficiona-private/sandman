@@ -1,10 +1,4 @@
 <?php
-/**
- * Template Name: Resources Page Layout
- *
- * @package understrap
- */
-
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 

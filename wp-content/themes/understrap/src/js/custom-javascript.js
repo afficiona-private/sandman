@@ -6,6 +6,9 @@
 
   $(document).ready(function() {
 
+    // Wow js
+    new WOW().init();
+
     // Set height for home page hero bg
     var $homePageHeroEle = $('#homePageHero');
     var $homePageHeroBgEle = $('#homePageHeroBg');

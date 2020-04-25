@@ -54,3 +54,4 @@ function modify_login_in_menu( $atts, $item, $args ) {
 }
 add_filter( 'nav_menu_link_attributes', 'modify_login_in_menu', 10, 3 );
 
+wp_enqueue_script( 'wowjs', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), false, true );
