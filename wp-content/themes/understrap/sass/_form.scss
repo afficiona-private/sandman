@@ -17,6 +17,9 @@
     .form-group {
       label {
         text-align: right;
+        @include media-breakpoint-down(sm) {
+          text-align: left;
+        }
       }
     }
   }
@@ -29,13 +32,7 @@
     display: block;
     margin-bottom: 1.2rem;
     @include media-breakpoint-up(sm) {
-      display: flex;
-      margin-bottom: 5px;
-    }
-    label {
-      @include media-breakpoint-up(sm) {
-        margin-right: 1rem;
-      }
+      margin-bottom: 10px;
     }
     .wpcf7-form-control-wrap {
       flex: 1;

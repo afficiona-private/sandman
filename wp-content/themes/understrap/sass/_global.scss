@@ -127,6 +127,26 @@ a {
       height: 100%;
     }
   }
+
+  &-full {
+    .modal-dialog {
+      max-width: 100%;
+      .modal-content {
+        height: 100%;
+        border-radius: 0;
+        iframe {
+          width: 100%;
+          height: 100%;
+        }
+        .modal-close {
+          font-size: 40px;
+          top: 5px;
+          right: 5px;
+          opacity: .5;
+        }
+      }
+    }
+  }
 }
 
 .general-page {

@@ -28,6 +28,9 @@ wp_nav_menu(
 <?php if ($post->post_name == 'careers') {
 	get_template_part( 'global-templates/job-apply-modal' );
 } ?>
+<?php if ($post->post_name == 'home') {
+	get_template_part( 'global-templates/youtube-modal' );
+} ?>
 <footer class="site-footer">
 	<div class="container">
 		<div class="row">

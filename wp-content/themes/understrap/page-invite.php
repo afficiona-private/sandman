@@ -20,8 +20,8 @@ get_header();
 
 								<div class="row justify-content-center">
 									<div class="col-12 col-md-10 col-xl-8">
-										<div class="form-wrapper invite">
-											<?php echo do_shortcode( '[contact-form-7 id="318" title="Invite Request"]' ); ?>
+										<div class="form-wrapper invite py-4">
+											<?php echo do_shortcode( '[contact-form-7 id="468" title="Invite"]' ); ?>
 										</div>
 									</div>
 								</div>

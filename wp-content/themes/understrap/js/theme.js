@@ -7150,6 +7150,14 @@
 
     if ($homePageHeroBgEle) {
       $homePageHeroBgEle.height($(document).width() * 0.606);
+    } // Set height for About us page hero bg
+
+
+    var $aboutPageHeroEle = $('#aboutPageHero');
+    var $aboutPageHeroBgEle = $('#aboutPageHeroBg');
+
+    if ($aboutPageHeroEle && $aboutPageHeroBgEle) {
+      $aboutPageHeroEle.css('min-height', $(document).width() * .4);
     } // Check scroll pos of document and add class to header nav for visibility in home page
 
 
@@ -7206,15 +7214,14 @@
       if (event.detail.status === 'mail_sent' && event.detail.contactFormId === '63') {
         $('#demoSuccessModal').modal();
       }
-    }, false); // FIXME: Delete this
-    // $('input[name="cta-fullname"]').val('Aman Pandey');
-    // $('input[name="cta-organisation"]').val('Upstox');
-    // $('input[name="cta-designation"]').val('Software Engineer');
-    // $('input[name="cta-email"]').val('aman@sample.com');
-    // $('input[name="cta-contact"]').val('9234234234324');
-    // $('input[name="cta-country"]').val('India');
-    // $('input[name="cta-state"]').val('MH');
-    // $('input[name="cta-city"]').val('Mumbai');
-    // $('input[name="cta-mpl"]').val('12,000');
+    }, false);
+    $('.youtube-item').on('click', function () {
+      var youtubeUrl = $(this).data('youtube');
+      $('#youtubeModal').modal();
+      $('#youtubeModal').find('iframe').attr('src', youtubeUrl);
+    });
+    $('#youtubeModal').on('hidden.bs.modal', function () {
+      $(this).find('iframe').attr('src', '');
+    });
   });
 })(jQuery);

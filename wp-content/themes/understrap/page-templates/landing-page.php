@@ -41,20 +41,20 @@ get_header();
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-4 offset-lg-1 wow fadeIn" data-wow-delay=".5s">
-						<img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Browser-Screenshots@2x.png" alt="">
+						<img class="img-fluid" src="<?php the_field('about_sandman_featured_image') ?>">
 					</div>
 					<div class="col-lg-6 wow fadeIn" data-wow-delay=".5s">
-						<h2 class="text-primary mb-3">The world’s first Data Analytics software for Foundries</h2>
-						<p>
-							SANDMAN ™ is a cloud-based Predictive and Prescriptive Data Analytics driven decision support system which employs powerful mathematical modelling and algorithms for optimisation of a foundry's green sand system. It's powerful data correlation capabilities and unique SANDMIX algorithm helps foundries achieve a dose-by-need additive prediction based on its consumption, sand properties and casting data over long period of time and continuous data sets thereby optimizing additive consumption reducing rejections and associated costs. This SaaS delivered software is backed by a team of experienced foundry experts, data scientists, and developers.
-						</p>
-						<a
-							href="https://github.com/nuxt/nuxt.js"
-							target="_blank"
-							class="text-uppercase text-secondary"
-						>
-							Explore our product
-						</a>
+						<h2 class="text-primary mb-3"><?php the_field('about_sandman_title'); ?></h2>
+						<?php the_field('about_sandman_description') ?>
+						<div class="mt-4">
+							<a
+								href="<?php the_permalink( get_page_by_path( 'product-sandman' ) ); ?>"
+								target="_blank"
+								class="text-uppercase text-secondary"
+							>
+								Explore our product
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -70,9 +70,9 @@ get_header();
 							<div class="row">
 								<div class="col-lg-10 offset-lg-1 text-center">
 									<p>
-										The genesis of Sandman™ lay in the providing of Value-added solutions for Green Sand Moulding Foundries, which Mr. Deepak Chowdhary introduced in the early 1990s. Inviting laboratory samples of green sand and additives, he was able to predict the possible casting defects, causes and their possible solutions based on some fundamental parameters of the sand sample. The predictions, based on his growing experience with several hundred foundries that his company supplied additives to, proved to be quite accurate and thus commanded consistent interest and demand from customers and became a significant value proposition. To make this expertise in predicting sand related casting defects led to conceptualisation of Sandman™.
+										<?php the_field('more_about_sandman'); ?>
 									</p>
-									<a href="" class="text-uppercase text-secondary">
+									<a href="<?php the_permalink( get_page_by_path( 'about-us' ) ); ?>" class="text-uppercase text-secondary">
 										Know more about us
 									</a>
 								</div>
@@ -178,7 +178,7 @@ get_header();
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-12">
-						<h2 class="text-primary h3 text-center mb-4">Our Clients</h2>
+						<h2 class="text-primary h3 text-center mb-4"><?php the_field('clients_title'); ?></h2>
 						<?php get_template_part( 'global-templates/company-cards' ); ?>
 					</div>
 				</div>
@@ -191,7 +191,7 @@ get_header();
 			<div class="container">
 
 				<!-- youtube insights -->
-				<?php get_template_part( 'global-templates/insights' ); ?>
+				<?php get_template_part( 'global-templates/youtube-insights' ); ?>
 				<!-- youtube insights ends -->
 
 				<!-- divider -->
@@ -202,32 +202,9 @@ get_header();
 				</div>
 				<!-- divider ends -->
 
-				<!-- Articles -->
-				<div class="row">
-					<?php
-						$query = new WP_Query( 'cat=insights&posts_per_page=4' );
-								
-						$itemIndex = 0;
-						while ( $query->have_posts() ) : $query->the_post();
-						$thumb_id = get_post_thumbnail_id();
-						$thumb_url_array = wp_get_attachment_image_src($thumb_id, '1000', true);
-						$thumb_url = $thumb_url_array[0];
-						$animDelay = (4 * $itemIndex) / 10;
-							?>
-								<div class="col-lg-3 mb-4 mb-sm-0 wow fadeIn" data-wow-delay="<?php echo $animDelay; ?>s">
-									<div class="article-item p-4">
-										<h3 class="h5 mb-4"><?php the_title() ?></h3>
-										<?php the_excerpt() ?>
-									</div>
-								</div>
-							<?php
-							$itemIndex++;
-						endwhile;
-
-						wp_reset_postdata(); 
-					?>
-				</div>
-				<!-- Articles ends -->
+				<!-- featured insights -->
+				<?php get_template_part( 'global-templates/featured-insights' ); ?>
+				<!-- featured insights ends -->
 
 				<!-- divider -->
 				<div class="row">
@@ -247,17 +224,14 @@ get_header();
 				<!-- title -->
 				<div class="row">
 					<div class="col-lg-12">
-						<h2 class="text-primary h3 text-center mb-5">#Sandman</h2>
+						<h2 class="text-primary h3 text-center mb-5"><?php the_field('feed_title'); ?></h2>
 					</div>
 				</div>
 				<!-- title ends -->
 
-				<div class="row">
-					<div class="col-lg-5 offset-lg-1">
-						<a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/michaeljohns?ref_src=twsrc%5Etfw">Tweets by michaeljohns</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-					</div>
-					<div class="col-lg-5">
-						<a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/michaeljohns?ref_src=twsrc%5Etfw">Tweets by michaeljohns</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+				<div class="row justify-content-center">
+					<div class="col-md-5">
+						<a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/<?php the_field('twitter_handle'); ?>">Tweets by Sandman</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 					</div>
 				</div>
 			</div>

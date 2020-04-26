@@ -59,11 +59,17 @@
     font-weight: 700;
     transition: .2s all;
   }
-  .nav-link {
-    &.btn-light {
-      color: $body-color;
-      &:hover {
-        color: $secondary !important;
+  .nav-item {
+    &.button {
+      .nav-link {
+        @extend .btn;
+        @extend .btn-light;
+        margin-left: 2rem;
+        padding-left: 2rem;
+        padding-right: 2rem;
+        &:hover {
+          color: $secondary;
+        }
       }
     }
   }
