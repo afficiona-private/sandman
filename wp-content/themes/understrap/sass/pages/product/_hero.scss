@@ -1,18 +1,23 @@
 .hero {
+  position: relative;
+  display: flex;
+  align-items: center;
   padding: 80px 0;
-  background: url('http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-426@2x.png') no-repeat left top;
-  background-size: 50%;
 
-  @include media-breakpoint-down(sm) {
-    background: none;
-    padding: 0;
+  &-bg {
+    position: absolute;
+    width: 60%;
+    top: 0;
+    left: 0;
   }
 
-  .poster {
-    width: 100%;
-    max-width: 595px;
-    @include media-breakpoint-up(sm) {
-      display: none;
+  @include media-breakpoint-down(sm) {
+    padding: 0 0 20px;
+    min-height: auto !important;
+    display: block;
+    &-bg {
+      position: static;
+      width: 100%;
     }
   }
 }

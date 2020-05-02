@@ -1,7 +1,15 @@
 .cta {
-  background: url('http://localhost:8888/wordpress/wp-content/uploads/2020/04/Mask-Group-29.png') no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
   position: relative;
+
+  &-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+  }
 
   .container {
     position: relative;

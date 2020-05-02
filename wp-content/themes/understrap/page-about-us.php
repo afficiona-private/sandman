@@ -19,7 +19,7 @@ $container = get_theme_mod( 'understrap_container_type' );
       <div class="container">
         <div class="row">
           <div class="col-lg-5">
-            <h2 class="text-primary mb-4"><?php the_field('hero_title'); ?></h2>
+            <h2 class="text-primary mb-4 wow slideInUp"><?php the_field('hero_title'); ?></h2>
             <?php the_field('hero_description'); ?>
           </div>
         </div>
@@ -31,13 +31,13 @@ $container = get_theme_mod( 'understrap_container_type' );
       <div class="section2">
         <div class="container">
           <div class="row justify-content-center">
-            <div class="col-lg-5">
+            <div class="col-lg-5 wow fadeIn">
               <div class="d-flex flex-column align-items-center">
-                <img class="img-fluid" src="<?php the_field('second_section_image') ?>" alt="data right image">
-                <h2 class="text-primary mt-4"><?php the_field('second_section_title'); ?></h2>
+                <img class="img-fluid  wow fadeIn" src="<?php the_field('second_section_image') ?>" alt="data right image">
+                <h2 class="text-primary mt-4 wow slideInUp"><?php the_field('second_section_title'); ?></h2>
               </div>
             </div>
-            <div class="col-lg-5">
+            <div class="col-lg-5 wow fadeIn" data-wow-delay=".4s">
               <?php the_field('second_section_description'); ?>
             </div>
           </div>
@@ -52,12 +52,15 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="row justify-content-center">
               <div class="col-lg-8">
                 <h2 class="text-white"><?php the_field('third_section_title'); ?></h2>
-                <div class="text-white">
+                <div class="text-white wow fadeIn">
                   <?php the_field('third_section_description'); ?>
                 </div>
                 <div class="row justify-content-center">
                   <div class="col-12 col-sm-4">
-                    <a href="<?php the_permalink( get_page_by_path( 'product-sandman' ) ) ?>" class="btn btn-light btn-block mt-5 mt-sm-4" href="">
+                    <a
+                      href="<?php the_permalink( get_page_by_path( 'product-sandman' ) ) ?>"
+                      class="btn btn-light btn-block mt-5 mt-sm-4 wow fadeInUp"
+                    >
                       <span class="text-primary"><?php the_field('third_section_button_text'); ?></span>
                     </a>
                   </div>
@@ -73,7 +76,7 @@ $container = get_theme_mod( 'understrap_container_type' );
       <div class="section4">
         <div class="container">
           <div class="row">
-            <div class="col-lg-10 offset-lg-1 text-center">
+            <div class="col-lg-10 offset-lg-1 text-center wow fadeIn">
               <?php the_field('fourth_section_description'); ?>
             </div>
           </div>
@@ -87,7 +90,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-6">
-              <h2 class="text-primary mb-4 mt-0 mt-sm-5">
+              <h2 class="text-primary mb-4 mt-0 mt-sm-5 wow fadeInUp">
                 <?php the_field('fifth_section_title'); ?>
               </h2>
               <?php the_field('fifth_section_description'); ?>

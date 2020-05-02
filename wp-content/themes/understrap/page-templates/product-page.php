@@ -12,6 +12,10 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 $container = get_theme_mod( 'understrap_container_type' );
+$product_type =  explode('-',$post->post_name);
+if ($product_type) {
+  $product_type = $product_type[1];
+}
 ?>
 
 <div class="wrapper product-page" id="full-width-page-wrapper">
@@ -19,15 +23,15 @@ $container = get_theme_mod( 'understrap_container_type' );
   <main class="site-main" id="main" role="main">
     
     <!-- Hero -->
-    <div class="hero">
-      <img class="poster mb-4" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-426@2x.png" />
+    <div class="hero" id="productPageHero">
+      <img class="hero-bg wow fadeIn" id="productPageHeroBg" src="<?php the_field('hero_image') ?>" />
       <div class="container">
         <div class="row">
           <div class="col-lg-6 offset-lg-6">
-            <h1 class="text-primary h3"><?php the_field('hero_title') ?></h1>
-            <p>
+            <h1 class="text-primary h3 wow fadeInUp"><?php the_field('hero_title') ?></h1>
+            <div class="wow fadeIn">
               <?php the_field('hero_description') ?>
-            </p>
+            </div>
           </div>
         </div>
       </div>
@@ -38,35 +42,43 @@ $container = get_theme_mod( 'understrap_container_type' );
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="h4 text-primary mt-5 mb-3 text-center">Introducing</h2>
+          <h2 class="h3 text-primary mt-5 mb-3 text-center">
+            <?php the_field('introduction_title') ?>
+          </h2>
         </div>
       </div>
     </div>
     <div class="wrapper text-center">
       <div class="container">
         <div class="product-tabs">
-          <div class="row justify-content-center no-gutters">
-            <div class="col-6 col-lg-3">
-              <a class="tab" href="">
-                  <img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-405@2x.png" alt="">
-                </a>
+          <div class="row justify-content-center wow fadeInUp">
+            <div class="col-6 col-lg-2">
+              <a
+                class="tab <?php echo $product_type === 'sandman' ? 'tab-active' : '' ?>"
+                href="<?php the_permalink( get_page_by_path( 'product-sandman' ) ) ?>"
+              >
+                <img class="img-fluid" src="<?php the_field('sandman_image') ?>" alt="Sandman" />
+              </a>
             </div>
-            <div class="col-6 col-lg-3">
-              <a class="tab" href="">
-                  <img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/Group-405@2x.png" alt="">
+            <div class="col-6 col-lg-2">
+              <a
+                class="tab <?php echo $product_type === 'digismart' ? 'tab-active' : '' ?>"
+                href="<?php the_permalink( get_page_by_path( 'product-digismart' ) ) ?>"
+              >
+                <img class="img-fluid" src="<?php the_field('digismart_image') ?>" alt="Digismart" />
                 </a>
             </div>
           </div>
         </div>
 
-        <div class="row">
+        <div class="row wow fadeInUp" data-wow-delay=".4s">
           <div class="col-12">
-            <h2 class="text-white mb-3"><?php the_field('introduction_title') ?></h2>
+            <h2 class="text-white mb-3 mt-4"><?php the_field('product_title') ?></h2>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-10 offset-lg-1">
-            <p class="text-white"><?php the_field('introduction_description') ?></p>
+        <div class="row justify-content-center wow fadeIn" data-wow-delay=".7s">
+          <div class="col-lg-8 text-white">
+            <?php the_field('product_description') ?>
           </div>
         </div>
       </div>
@@ -77,7 +89,7 @@ $container = get_theme_mod( 'understrap_container_type' );
     <div class="container">
       <div class="row">
         <div class="col-12">
-          <h2 class="text-center h3 mt-5 mb-4"><?php the_field('principles_title') ?></h2>
+          <h2 class="text-center h3 mt-5 mb-4 wow fadeInUp"><?php the_field('principles_title') ?></h2>
         </div>
       </div>
     </div>
@@ -97,7 +109,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 									$thumb_url_array = wp_get_attachment_image_src($thumb_id, full, true);
 									$thumb_url = $thumb_url_array[0];
                 ?>
-                <div class="item">
+                <div class="item wow fadeIn">
                   <div class="icon">
                     <img class="img-fluid" src=<?php echo $thumb_url  ?> alt="">
                   </div>
@@ -116,13 +128,17 @@ $container = get_theme_mod( 'understrap_container_type' );
     <!-- Principles ends -->
 
     <!-- CTA -->
-    <div class="container mb-5">
+    <div class="container mb-5 wow fadeIn">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-3">
-          <a class="btn btn-primary btn-lg btn-block mb-3 mb-lg-0" href="">Compare Digismart & Pro</a>
+          <a class="btn btn-primary btn-lg btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'features-comparison' ) ) ?>">
+            Compare Digismart & Pro
+          </a>
         </div>
         <div class="col-12 col-lg-3">
-          <a class="btn btn-primary btn-lg btn-block" href="">Check ROI</a>
+          <a class="btn btn-primary btn-lg btn-block" href="<?php the_permalink( get_page_by_path( 'check-roi' ) ) ?>">
+            Check ROI
+          </a>
         </div>
       </div>
     </div>
@@ -133,10 +149,10 @@ $container = get_theme_mod( 'understrap_container_type' );
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2>Salient Features</h2>
+            <h2 class="h4 mb-4 wow fadeIn"><?php the_field('features_title'); ?></h2>
           </div>
         </div>
-        <div class="row">
+        <div class="row wow fadeIn" data-wow-delay=".4s">
           <div class="col-lg-3">
             <ul class="nav flex-column">
               <?php 
@@ -191,16 +207,22 @@ $container = get_theme_mod( 'understrap_container_type' );
     <!-- Features ends -->
 
     <!-- CTA -->
-    <div class="container mt-5 mb-5">
+    <div class="container mt-5 mb-5 wow fadeIn">
       <div class="row justify-content-center">
         <div class="col-12 col-lg-3">
-          <a class="btn btn-outline-primary btn-block mb-3 mb-lg-0" href="">Compare Digismart & Pro</a>
+          <a class="btn btn-outline-primary btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'features-comparison' ) ) ?>">
+            Compare Digismart & Pro
+          </a>
         </div>
         <div class="col-12 col-lg-2">
-          <a class="btn btn-primary btn-block mb-3 mb-lg-0" href="">Request a Demo</a>
+          <a class="btn btn-primary btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'request-demo' ) ) ?>">
+            Request a Demo
+          </a>
         </div>
         <div class="col-12 col-lg-2">
-          <a class="btn btn-outline-primary btn-outline btn-block" href="">Check ROI</a>
+          <a class="btn btn-outline-primary btn-outline btn-block" href="<?php the_permalink( get_page_by_path( 'check-roi' ) ) ?>">
+            Check ROI
+          </a>
         </div>
       </div>
     </div>

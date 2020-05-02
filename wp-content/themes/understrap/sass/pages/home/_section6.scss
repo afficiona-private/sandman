@@ -3,10 +3,15 @@
 
   .youtube-item {
     border: 1px solid #F7F7F7;
-    margin-bottom: 1rem;
     border-radius: 6px;
     cursor: pointer;
     transition: .4s all;
+
+    @include media-breakpoint-up(md) {
+      &:last-child {
+        margin-bottom: 0 !important;
+      }
+    }
 
     &:hover {
       .img-wrapper {
@@ -74,15 +79,11 @@
       flex: 1;
     }
 
-    .post-link {
-      display: block;
-      text-align: right;
-      text-transform: uppercase;
-      margin-top: auto;
-    }
-
     &:hover {
       box-shadow: 0px 10px 10px #0000000F;
+      a {
+        color: $secondary !important;
+      }
     }
   }
 }

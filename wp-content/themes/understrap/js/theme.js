@@ -7158,6 +7158,14 @@
 
     if ($aboutPageHeroEle && $aboutPageHeroBgEle) {
       $aboutPageHeroEle.css('min-height', $(document).width() * .4);
+    } // Set height for Product page hero bg
+
+
+    var $productPageHeroEle = $('#productPageHero');
+    var $productPageHeroBgEle = $('#productPageHeroBg');
+
+    if ($productPageHeroEle && $productPageHeroBgEle) {
+      $productPageHeroEle.css('min-height', $(document).width() * .4);
     } // Check scroll pos of document and add class to header nav for visibility in home page
 
 

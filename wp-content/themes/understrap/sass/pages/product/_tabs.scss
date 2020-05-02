@@ -1,9 +1,9 @@
 .wrapper {
-  padding: 0 0 80px;
+  padding: 0 0 60px;
   background: $primary;
   .product-tabs {
     position: relative;
-    top: -50px;
+    top: -40px;
     margin-top: 50px;
     margin-bottom: -30px;
     @include media-breakpoint-down(sm) {
@@ -11,8 +11,16 @@
       top: -40px;
     }
     .tab {
-      width: 190px;
-      flex: 0 1 190px;
+      display: block;
+      border-radius: 5px;
+      background: $white;
+      border: 2px solid transparent;
+      transition: .4s all;
+
+      &-active, &:hover {
+        box-shadow: 15px 0px 30px #00371E26;
+        border: 2px solid #D9E8AF;
+      }
     }
   }
 }

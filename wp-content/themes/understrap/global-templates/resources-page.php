@@ -30,14 +30,16 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
               'post_type' => 'post',
               'category_name' => $cat_slug
             ));
+            $itemIndex = 0;
             foreach( $posts as $post ) {
               setup_postdata( $post );
               $thumb_id = get_post_thumbnail_id();
               $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
               $thumb_url = $thumb_url_array[0];
               $file = get_field('resource_document');
+              $animDelay = ($itemIndex + 3) / 10;
               ?>
-                <div class="col-lg-4">
+                <div class="col-lg-4 mb-4 wow fadeIn" data-wow-delay="<?php echo $animDelay; ?>s">
                   <div class="card">
                     <img class="img-fluid" src="<?php echo $thumb_url; ?>" alt="">
                     <div class="d-flex justify-content-between align-items-center mt-3">
@@ -62,6 +64,7 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
                   </div>
                 </div>
               <?php
+              $itemIndex++;
               wp_reset_postdata();
             }
           ?>

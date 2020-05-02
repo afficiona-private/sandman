@@ -18,8 +18,8 @@ get_header();
         <div class="row">
           <div class="col-lg-4 text-white">
             <div id="contactPageHero">
-              <h1 class="text-white mb-4"><?php the_title(); ?></h1>
-              <div class="h5 font-weight-normal text-white mb-4 mb-md-0">
+              <h1 class="text-white mb-4 wow fadeInUp"><?php the_title(); ?></h1>
+              <div class="h5 font-weight-normal text-white mb-4 mb-md-0 wow fadeIn" data-wow-delay=".4s">
                 <?php
                   while ( have_posts() ) : the_post(); ?>
                     <?php the_content(); ?> 
@@ -31,7 +31,7 @@ get_header();
             </div>
           </div>
           <div class="col-lg-7 offset-lg-1">
-            <div class="form-wrapper">
+            <div class="form-wrapper wow fadeIn">
               <?php echo do_shortcode( '[contact-form-7 id="258" title="Contact Us"]' ); ?>
             </div>
           </div>
@@ -64,7 +64,7 @@ get_header();
           <?php
             while ( $locationsQuery->have_posts() ) : $locationsQuery->the_post();
               ?>
-                <div class="col-lg-6">
+                <div class="col-lg-6 wow fadeIn">
                   <h4 class="text-color font-weight-normal"><?php the_title(); ?></h4>
                   <div class="row">
                     <div class="col-12">

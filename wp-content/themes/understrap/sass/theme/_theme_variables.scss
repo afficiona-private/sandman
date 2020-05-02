@@ -14,24 +14,25 @@ $body-color: #333333;
 $text-muted: #E1E1E1;
 $gray-100: #F9F9F9;
 $gray-600: #8F8F8F;
-$dark: #000;
+$dark: #182100;
 $link-color: $secondary;
 
 //grid
 $grid-gutter-width: 24px;
 
 $font-family-base:            Circular Book !default;
-$headings-font-family:        Circular !default;
-$headings-font-weight:        600 !default;
+$headings-font-family:        Circular Bold !default;
+$btn-font-weight:             Circular Heavy !default;
+$headings-font-weight:        400 !default;
 $headings-line-height:        1.45 !default;
 $line-height-base:            1.94 !default;
 
 //font sizes
-$font-size-base:              0.875rem;
-$h1-font-size:                $font-size-base * 4.28571 !default;
-$h2-font-size:                $font-size-base * 2 !default;
+$font-size-base:              1rem !default;
+$h1-font-size:                3.75rem !default;
+$h2-font-size:                2.188rem !default;
 $h3-font-size:                $font-size-base * 1.75 !default;
-$h4-font-size:                $font-size-base * 1.5 !default;
+$h4-font-size:                1.125rem !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base * 1.142857 !default;
 
@@ -78,7 +79,7 @@ $grid-breakpoints: (
   xl: 1280px
 );
 $container-max-widths: (
-  sm: 540px,
+  sm: 600px,
   md: 770px,
   lg: 960px,
   xl: 1280px

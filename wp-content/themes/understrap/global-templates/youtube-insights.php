@@ -30,15 +30,15 @@ $nonFeaturedInsightQuery = new WP_Query( $nonFeaturedInsightsArgs );
     while ( $featuredInsightQuery->have_posts() ) : $featuredInsightQuery->the_post();
       $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
       ?>
-        <div class="col-lg-5 offset-lg-1">
-          <div data-youtube="<?php the_field('youtube_link'); ?>" class="youtube-item  h-100">
+        <div class="col-lg-6">
+          <div data-youtube="<?php the_field('youtube_link'); ?>" class="youtube-item h-md-100 mb-3 mb-md-0">
             <div class="row">
               <div class="col-12">
                 <div class="img-wrapper">
                   <img class="w-100" src="<?php echo $featured_img_url; ?>" alt="" />
                 </div>
                 <div class="p-3">
-                  <p><?php the_title(); ?></p>
+                  <h4><?php the_title(); ?></h4>
                 </div>
               </div>
             </div>
@@ -57,7 +57,7 @@ $nonFeaturedInsightQuery = new WP_Query( $nonFeaturedInsightsArgs );
       while ( $nonFeaturedInsightQuery->have_posts() ) : $nonFeaturedInsightQuery->the_post();
         $featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
         ?>
-          <div data-youtube="<?php the_field('youtube_link'); ?>" class="youtube-item">
+          <div data-youtube="<?php the_field('youtube_link'); ?>" class="youtube-item mb-3 mb-md-5">
             <div class="row">
               <div class="col-lg-4">
                 <div class="img-wrapper">
@@ -65,7 +65,9 @@ $nonFeaturedInsightQuery = new WP_Query( $nonFeaturedInsightsArgs );
                 </div>
               </div>
               <div class="col-lg-8 d-flex align-items-center">
-                <p><?php the_title(); ?></p>
+                <div class="p-3">
+                  <h4><?php the_title(); ?></h4>
+                </div>
               </div>
             </div>
           </div>
@@ -76,7 +78,7 @@ $nonFeaturedInsightQuery = new WP_Query( $nonFeaturedInsightsArgs );
   </div>
 
   <div class="col-12">
-    <a class="text-sm-right d-block mt-4 text-uppercase" target="_blank" href="<?php the_field('youtube_channel'); ?>">
+    <a class="text-sm-right d-block mt-2 mt-md-4 text-uppercase text-dark" target="_blank" href="<?php the_field('youtube_channel'); ?>">
       Visit our YouTube Channel for more
     </a>
   </div>
