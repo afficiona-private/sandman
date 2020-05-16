@@ -15,11 +15,11 @@ $container = get_theme_mod( 'understrap_container_type' );
   <main class="site-main" id="main" role="main">
       <!-- Hero -->
     <div class="hero" id="aboutPageHero">
-      <img class="hero-bg" id="aboutPageHeroBg" src="<?php the_field('hero_image'); ?>" alt="About Us Hero">
+      <img class="hero-bg wow fadeIn" id="aboutPageHeroBg" src="<?php the_field('hero_image'); ?>" alt="About Us Hero">
       <div class="container">
         <div class="row">
-          <div class="col-lg-5">
-            <h2 class="text-primary mb-4 wow slideInUp"><?php the_field('hero_title'); ?></h2>
+          <div class="col-lg-5 wow fadeIn">
+            <h2 class="text-primary mb-4"><?php the_field('hero_title'); ?></h2>
             <?php the_field('hero_description'); ?>
           </div>
         </div>
@@ -33,7 +33,7 @@ $container = get_theme_mod( 'understrap_container_type' );
           <div class="row justify-content-center">
             <div class="col-lg-5 wow fadeIn">
               <div class="d-flex flex-column align-items-center">
-                <img class="img-fluid  wow fadeIn" src="<?php the_field('second_section_image') ?>" alt="data right image">
+                <img class="img-fluid wow fadeIn" src="<?php the_field('second_section_image') ?>" alt="data right image">
                 <h2 class="text-primary mt-4 wow slideInUp"><?php the_field('second_section_title'); ?></h2>
               </div>
             </div>
@@ -51,15 +51,15 @@ $container = get_theme_mod( 'understrap_container_type' );
           <div class="wrapper text-center">
             <div class="row justify-content-center">
               <div class="col-lg-8">
-                <h2 class="text-white"><?php the_field('third_section_title'); ?></h2>
+                <h2 class="text-white mb-4"><?php the_field('third_section_title'); ?></h2>
                 <div class="text-white wow fadeIn">
                   <?php the_field('third_section_description'); ?>
                 </div>
                 <div class="row justify-content-center">
-                  <div class="col-12 col-sm-4">
+                  <div class="col-12 col-sm-6">
                     <a
                       href="<?php the_permalink( get_page_by_path( 'product-sandman' ) ) ?>"
-                      class="btn btn-light btn-block mt-5 mt-sm-4 wow fadeInUp"
+                      class="btn btn-light px-4 mt-5 mt-sm-4 wow fadeInUp"
                     >
                       <span class="text-primary"><?php the_field('third_section_button_text'); ?></span>
                     </a>
@@ -85,15 +85,17 @@ $container = get_theme_mod( 'understrap_container_type' );
     <!-- Section 4 ends -->
 
     <!-- Section 5 -->
-      <div class="section5">
-        <img class="poster mb-4" src="<?php the_field('fifth_section_image') ?>" />
+      <div class="section5" id="aboutPageSection5">
+        <img id="aboutPageSection5Poster" class="poster wow fadeIn" src="<?php the_field('fifth_section_image') ?>" />
         <div class="container">
           <div class="row">
             <div class="col-lg-6 offset-lg-6">
-              <h2 class="text-primary mb-4 mt-0 mt-sm-5 wow fadeInUp">
-                <?php the_field('fifth_section_title'); ?>
-              </h2>
-              <?php the_field('fifth_section_description'); ?>
+              <div class="content wow fadeIn">
+                <h2 class="text-primary mb-4">
+                  <?php the_field('fifth_section_title'); ?>
+                </h2>
+                <?php the_field('fifth_section_description'); ?>
+              </div>
             </div>
           </div>
         </div>
@@ -105,7 +107,7 @@ $container = get_theme_mod( 'understrap_container_type' );
       <div class="container">
         <div class="row">
           <div class="col-lg-12">
-            <h2 class="text-primary h3 text-center mb-4 mb-sm-5">Our Clients</h2>
+            <h2 class="text-primary h3 text-center mb-4 mb-sm-5"><?php the_field('company_cards_title'); ?></h2>
             <?php get_template_part( 'global-templates/company-cards' ); ?>
           </div>
         </div>

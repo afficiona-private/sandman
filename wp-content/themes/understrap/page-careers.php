@@ -42,7 +42,7 @@ get_header();
 														<div class="each-content">
 															<?php the_content(); ?>
 														</div>
-														<button class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#jobApplyModal">
+														<button class="btn btn-secondary btn-sm px-4" data-toggle="modal" data-target="#jobApplyModal">
 															Apply
 														</button>
 													</div>

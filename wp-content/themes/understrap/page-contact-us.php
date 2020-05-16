@@ -48,7 +48,7 @@ get_header();
             <h3 class="text-primary mb-4">Trusted By</h3>
             <?php get_template_part( 'global-templates/company-cards' ); ?>
           </div>
-          <div class="col-9 col-md-3 offset-lg-1">
+          <div class="col-8 col-sm-5 col-md-3 offset-lg-1">
             <h3 class="text-primary mb-4 mt-4 mt-md-0">Follow Us</h3>
             <?php get_template_part( 'global-templates/follow' ); ?>
           </div>

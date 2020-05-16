@@ -40,6 +40,10 @@
     @extend .form-control;
   }
 
+  .wpcf7-mail-sent-ok {
+    display: none !important;
+  }
+
   .wpcf7-checkbox {
     .wpcf7-list-item-label {
       padding-left: 30px;

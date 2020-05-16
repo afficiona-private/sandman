@@ -1,15 +1,31 @@
 <?php
+$page_slug = $post->post_name;
+$form_id = '';
+if ($page_slug == 'request-demo' || $page_slug == 'home' || $page_slug == 'about-us') {
+  $form_id = '63';
+}
+if ($page_slug == 'contact-us') {
+  $form_id = '258';
+}
+if ($page_slug == 'invite') {
+  $form_id = '468';
+}
+
+if ($form_id == '') {
+  return;
+}
+
 $params = array(
     // 63 is the contact form id for Request Demo form.
-    'where'=>"form.id = '63'"
+    'where'=>"form.id = " . $form_id
 );
 
 // Run the find
-$title = 'Thank you for requesting a demo of our software!';
-$message = 'We will get back to you shortly with a convenient time and place for the demo. In the meantime we are sending you some additional information of our software.';
-$btnText = 'Okay';
+$title = '';
+$message = '';
+$btnText = '';
 
-$msgPod = pods( 'form_success_message' );
+$msgPod = pods( 'forms_success_msg' );
 $msgPod->find( $params );
 while ( $msgPod->fetch() ) {
   $title = $msgPod->field('message_title');
@@ -19,7 +35,7 @@ while ( $msgPod->fetch() ) {
 ?>
 
 <!-- Modal -->
-<div class="modal fade" id="demoSuccessModal" tabindex="-1" role="dialog" aria-labelledby="demoSuccessModalLabel" aria-hidden="true">
+<div class="modal fade form-success-modal" id="formSuccessModal" tabindex="-1" role="dialog" aria-labelledby="formSuccessModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">
     <div class="modal-content">
       <div class="modal-body px-2 py-5 text-center">

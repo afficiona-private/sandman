@@ -31,6 +31,13 @@ $font-path:        "../fonts" !default;
 }
 
 @font-face {
+  font-family: 'Circular Black';
+  src: url('#{$font-path}/CircularStd-Black.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
   font-family: 'Circular Book';
   src: url('#{$font-path}/CircularStd-Book.otf') format('opentype');
   font-weight: normal;

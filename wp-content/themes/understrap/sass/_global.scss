@@ -149,6 +149,12 @@ a {
       }
     }
   }
+
+  &.form-success-modal {
+    .modal-content {
+      height: auto;
+    }
+  }
 }
 
 .general-page {

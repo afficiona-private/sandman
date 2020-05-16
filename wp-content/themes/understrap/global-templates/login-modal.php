@@ -1,3 +1,7 @@
+<?php
+$invitePageLink = get_permalink( get_page_by_path( 'invite' ) );
+?>
+
 <!-- Modal -->
 <div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-md" role="document">
@@ -20,18 +24,20 @@
           </div>
           <!-- Password -->
 
-          <p class="text-center"><a href="#" class="text-dark">Forgot your password</a></p>
+          <p class="text-center"><a href="#" class="text-body">Forgot your password?</a></p>
 
           <div class="row justify-content-center">
             <div class="col-sm-6">
-              <button type="submit" class="btn btn-primary btn-block mb-5">Submit</button>
+              <button type="submit" class="btn btn-primary btn-block mb-5">Log In</button>
             </div>
           </div>
 
           <p class="text-center">Interested to try Sandman</p>
           <div class="row justify-content-center">
             <div class="col-sm-6">
-              <button type="button" class="btn btn-secondary btn-block">Request an Invite</button>
+              <a type="button" href="<?php echo $invitePageLink; ?>" class="btn btn-secondary btn-block">
+                Request an Invite
+              </a>
             </div>
           </div>
           <!-- Password-->

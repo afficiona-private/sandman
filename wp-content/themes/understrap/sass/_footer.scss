@@ -1,5 +1,10 @@
   .site-footer {
     background: #2A3731;
+    font-size: 0.875rem;
+
+    .link-copyright {
+      font-family: $font-family-base;
+    }
 
     .footer-menu {
       padding: 0;
@@ -7,13 +12,14 @@
         margin-top: 0.5rem;
         margin-bottom: 1rem;
         @include media-breakpoint-up(sm) {
-          margin-top: 0.5rem;
-          margin-bottom: 3rem;
+          margin-top: 1rem;
+          margin-bottom: 2rem;
         }
         a {
           color: $white;
           opacity: 0.8;
           transition: .2s all;
+          font-size: 0.875rem;
           &:hover {
             opacity: 1;
           }

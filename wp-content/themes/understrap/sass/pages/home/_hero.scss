@@ -1,5 +1,8 @@
 .hero {
   position: relative;
+  @include media-breakpoint-down(xs) {
+    height: 100vh !important;
+  }
 
   &-content {
     padding: 200px 0;
@@ -11,15 +14,19 @@
       padding: 110px 0;
     }
   }
-  @include media-breakpoint-down(sm) {
-    height: auto !important;
-  }
 
   &-bg {
     position: absolute;
     width: 100%;
     top: 0;
     left: 0;
+    img {
+      width: 100%;
+      height: auto;
+    }
+    @include media-breakpoint-down(xs) {
+      height: 100% !important;
+    }
   }
 
   .title {

@@ -14,7 +14,8 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
   <main class="site-main" id="main" role="main">
     
     <!-- Hero -->
-    <div class="hero" style="background-image: url('<?php echo $featured_image_url; ?>');">
+    <div class="hero">
+      <img class="hero-bg" src="<?php echo $featured_image_url; ?>" alt="hero">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -23,7 +24,7 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
         </div>
 
         <!-- Cards -->
-        <div class="row mt-4 mt-lg-5">
+        <div class="row mt-5">
           <?php
 
             $posts = get_posts( array(

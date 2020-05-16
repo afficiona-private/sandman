@@ -12,13 +12,15 @@ $table-border-color: #BCBCBC;
 
   // Table
   .entry-content {
+    font-size: 14px;
+    line-height: 1.4;
     .table-wrapper {
       overflow: auto;
       border-right: 1px solid $table-border-color;
       border-left: 1px solid $table-border-color;
       .table-content {
         @include media-breakpoint-down(sm) {
-          width: 1020px; // This is the max width table can attain as per the current container widths setup
+          width: 100%;
         }
       }
     }
@@ -30,6 +32,11 @@ $table-border-color: #BCBCBC;
         font-weight: 600;
         border-right: 1px solid $table-border-color;
         border-bottom: 1px solid $table-border-color;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        height: 100%;
+        line-height: 1.4;
         &.last {
           border-right: none;
         }

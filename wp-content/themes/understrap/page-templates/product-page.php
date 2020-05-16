@@ -27,11 +27,9 @@ if ($product_type) {
       <img class="hero-bg wow fadeIn" id="productPageHeroBg" src="<?php the_field('hero_image') ?>" />
       <div class="container">
         <div class="row">
-          <div class="col-lg-6 offset-lg-6">
-            <h1 class="text-primary h3 wow fadeInUp"><?php the_field('hero_title') ?></h1>
-            <div class="wow fadeIn">
-              <?php the_field('hero_description') ?>
-            </div>
+          <div class="col-lg-6 offset-lg-6 wow fadeIn">
+            <h1 class="text-primary h3"><?php the_field('hero_title') ?></h1>
+            <?php the_field('hero_description') ?>
           </div>
         </div>
       </div>
@@ -52,7 +50,7 @@ if ($product_type) {
       <div class="container">
         <div class="product-tabs">
           <div class="row justify-content-center wow fadeInUp">
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-lg-3">
               <a
                 class="tab <?php echo $product_type === 'sandman' ? 'tab-active' : '' ?>"
                 href="<?php the_permalink( get_page_by_path( 'product-sandman' ) ) ?>"
@@ -60,7 +58,7 @@ if ($product_type) {
                 <img class="img-fluid" src="<?php the_field('sandman_image') ?>" alt="Sandman" />
               </a>
             </div>
-            <div class="col-6 col-lg-2">
+            <div class="col-6 col-lg-3">
               <a
                 class="tab <?php echo $product_type === 'digismart' ? 'tab-active' : '' ?>"
                 href="<?php the_permalink( get_page_by_path( 'product-digismart' ) ) ?>"
@@ -114,7 +112,7 @@ if ($product_type) {
                     <img class="img-fluid" src=<?php echo $thumb_url  ?> alt="">
                   </div>
                   <div class="content">
-                    <h4 class="text-primary mb-3 mb-sm-0"><?php the_title() ?></h4>
+                    <h3 class="text-primary mb-2 mb-sm-3"><?php the_title() ?></h3>
                     <?php the_content(); ?>
                   </div>
                 </div>
@@ -130,13 +128,13 @@ if ($product_type) {
     <!-- CTA -->
     <div class="container mb-5 wow fadeIn">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-3">
-          <a class="btn btn-primary btn-lg btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'features-comparison' ) ) ?>">
+        <div class="col-12 col-lg-4">
+          <a class="btn btn-primary btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'features-comparison' ) ) ?>">
             Compare Digismart & Pro
           </a>
         </div>
-        <div class="col-12 col-lg-3">
-          <a class="btn btn-primary btn-lg btn-block" href="<?php the_permalink( get_page_by_path( 'check-roi' ) ) ?>">
+        <div class="col-12 col-lg-4">
+          <a class="btn btn-primary btn-block" href="<?php the_permalink( get_page_by_path( 'check-roi' ) ) ?>">
             Check ROI
           </a>
         </div>
@@ -149,11 +147,12 @@ if ($product_type) {
       <div class="container">
         <div class="row">
           <div class="col-12">
-            <h2 class="h4 mb-4 wow fadeIn"><?php the_field('features_title'); ?></h2>
+            <h2 class="mb-4 wow fadeIn"><?php the_field('features_title'); ?></h2>
           </div>
         </div>
         <div class="row wow fadeIn" data-wow-delay=".4s">
-          <div class="col-lg-3">
+          <!-- Hide tabs on mobile and tablet -->
+          <div class="col-3 d-none d-md-flex">
             <ul class="nav flex-column">
               <?php 
                 $posts = get_field('features');
@@ -172,34 +171,66 @@ if ($product_type) {
               <?php endif; ?>
             </ul>
           </div>
-          <div class="col-lg-9">
-            <div class="tab-content">
-              <?php 
-                $posts = get_field('features');
-                $index = 0;
-                if( $posts ): ?>
-                <?php foreach( $posts as $post): ?>
+          <div class="col-12 col-md-9">
+
+            <!-- Carousel on mobile/tablet and tab on desktops -->
+            <div id="product-features-carousel" class="tab-content carousel slide" data-ride="">
+
+              <!-- Indicators -->
+              <div class="d-block d-md-none">
+                <ul class="carousel-indicators">
                   <?php
-                    setup_postdata($post);
-                  ?>
-                  <div id="feature-item-<?php the_id() ?>" class="tab-pane fade <?php echo $index == 0 ? 'show active' : '' ?>">
-                    <div class="row">
-                      <div class="col-lg-6">
-                        <img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/1.-Dashboard@2x.png" alt="">
-                      </div>
-                      <div class="col-lg-6">
-                        <h3><?php the_title() ?></h3>
-                        <p><?php the_content() ?></p>
-                      </div>
-                    </div>
-                  </div>
+
+                    $posts = get_field('features');
+                    $index = 0;
+                    if( $posts ):
+                      foreach( $posts as $post) {
+                        setup_postdata($post);
+                        ?>
+                          <li
+                            data-target="#product-features-carousel"
+                            data-slide-to="<?php echo $index ?>"
+                            class="<?php echo $index == 0 ? 'active': '' ?>"
+                          >
+                          </li>
+                        <?php
+                        $index++;
+                      }
+                      wp_reset_postdata();
+                    endif;
+                    ?>
+                </ul>
+              </div>
+
+              <div class="carousel-inner">
                 <?php
-                  $index++;
-                  endforeach;
-                ?>
-                <?php wp_reset_postdata(); ?>
-              <?php endif; ?>
+									$index = 0;
+									
+									if( $posts ):
+										foreach( $posts as $post) {
+                      setup_postdata($post);
+											$featured_img_url = get_the_post_thumbnail_url(get_the_ID(), 'full');
+                    ?>
+											<div id="feature-item-<?php the_id() ?>" class="tab-pane fade carousel-item <?php echo $index == 0 ? 'show active' : '' ?>">
+												<div class="row">
+                          <div class="col-lg-6">
+                            <img class="img-fluid" src="<?php echo $featured_img_url; ?>" alt="">
+                          </div>
+                          <div class="col-lg-6">
+                            <h3><?php the_title() ?></h3>
+                            <p><?php the_content() ?></p>
+                          </div>
+                        </div>
+											</div>
+										<?php
+										 $index++;
+									 	}
+										wp_reset_postdata(); 
+									endif;
+								?>
+              </div>
             </div>
+            
           </div>
         </div>
       </div>
@@ -214,12 +245,12 @@ if ($product_type) {
             Compare Digismart & Pro
           </a>
         </div>
-        <div class="col-12 col-lg-2">
+        <div class="col-12 col-lg-3">
           <a class="btn btn-primary btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'request-demo' ) ) ?>">
             Request a Demo
           </a>
         </div>
-        <div class="col-12 col-lg-2">
+        <div class="col-12 col-lg-3">
           <a class="btn btn-outline-primary btn-outline btn-block" href="<?php the_permalink( get_page_by_path( 'check-roi' ) ) ?>">
             Check ROI
           </a>

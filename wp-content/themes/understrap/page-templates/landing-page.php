@@ -19,10 +19,13 @@ $featured_img = $src[0];
 
 		<!-- hero -->
 		<div class="hero" id="homePageHero">
-			<img class="hero-bg" id="homePageHeroBg" src="<?php echo $featured_img; ?>" alt="hero image">
+			<div class="hero-bg" id="homePageHeroBg">
+				<img class="d-block d-sm-none" src="<?php the_field('hero_image_mobile') ?>" alt="hero image">
+				<img class="d-none d-sm-block" src="<?php the_field('hero_image') ?>" alt="hero image">
+			</div>
 			<div class="container h-100">
 				<div class="row h-100">
-					<div class="col-lg-7 col-xl-6 col-12 d-flex flex-column">
+					<div class="col-12 col-lg-9 col-xl-7 d-flex flex-column">
 						<div class="hero-content">
 							<h1 class="title text-white pr-xl-5 mb-lg-5">
 								<?php the_title(); ?>
@@ -87,7 +90,7 @@ $featured_img = $src[0];
 		<!-- Section2 ends -->
 
 		<!-- Section 3 -->
-		<div class="section3" style="background-image: url('<?php echo do_shortcode( '[media-url id="2020/04/Group-423@2x-265x300-1.png"]' ) ?>')">
+		<div class="section3" style="background-image: url('<?php echo do_shortcode( '[media-url id="2020/05/Section-3-BG.png"]' ) ?>')">
 			<div class="container">
 				<div class="row">
 					<div class="col-lg-10 offset-lg-1">

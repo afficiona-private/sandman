@@ -22,7 +22,8 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
   <main class="site-main" id="main" role="main">
     
     <!-- Hero -->
-    <div class="hero" style="background-image: url('<?php echo $featured_image_url; ?>');">
+    <div class="hero">
+      <img class="hero-bg" src="<?php echo $featured_image_url; ?>" alt="hero">
       <div class="container">
         <div class="row">
           <div class="col-12">
@@ -88,16 +89,14 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
                     $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
                     $thumb_url = $thumb_url_array[0];
 										?>
-											<div class="carousel-item <?php echo $index == 0 ? 'active' : '' ?>">
-                        <div class="row">
+											<div class="carousel-item p-4 <?php echo $index == 0 ? 'active' : '' ?>">
+                        <div class="row no-gutters">
                           <div class="col-lg-6">
-                            <div class="pt-3 pb-3 pl-3">
-                              <img class="img-fluid" src="<?php echo $thumb_url ?>" alt="">
-                            </div>
+                            <img class="img-fluid" src="<?php echo $thumb_url ?>" alt="">
                           </div>
                           <div class="col-lg-6">
-                            <div class="content d-flex flex-column h-100 pt-3 pr-3 pb-3">
-                              <h3 class="h5 mb-3"><?php the_title(); ?></h3>
+                            <div class="content d-flex flex-column h-100 pt-3 pt-md-0 pl-md-4">
+                              <h2 class="mb-3 text-primary"><?php the_title(); ?></h2>
                               <?php the_content(); ?>
                               <p class="mb-0 mt-4 font-weight-bold mt-auto"><?php the_field('event_date_label'); ?></p>
                               <p class="font-weight-bold"><?php the_field('event_location'); ?></p>
@@ -153,16 +152,14 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
                 $thumb_url_array = wp_get_attachment_image_src($thumb_id, 'full', true);
                 $thumb_url = $thumb_url_array[0];
                 ?>
-                <div class="event-card">
-                  <div class="row">
+                <div class="event-card p-4">
+                  <div class="row no-gutters">
                     <div class="col-lg-6">
-                      <div class="pt-3 pb-3 pl-3">
-                        <img class="img-fluid" src="<?php echo $thumb_url ?>" alt="">
-                      </div>
+                      <img class="img-fluid" src="<?php echo $thumb_url ?>" alt="">
                     </div>
                     <div class="col-lg-6">
-                      <div class="d-flex flex-column h-100 pr-4 pt-3 pb-3">
-                        <h3 class="h5 mb-0"><?php the_title(); ?></h3>
+                      <div class="d-flex flex-column h-100 pt-3 pt-md-0 pl-md-4">
+                        <h2 class="mb-0"><?php the_title(); ?></h2>
                         <p class="mb-0 mt-1 font-weight-bold mb-4">
                           <?php the_field('event_date_label'); ?> &nbsp; | &nbsp;
                           <?php the_field('event_location'); ?>

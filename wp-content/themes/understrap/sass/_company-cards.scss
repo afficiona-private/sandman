@@ -4,7 +4,7 @@
   }
   .each {
     max-width: 220px;
-    height: 100px;
+    height: 80px;
     margin: 0 0 60px;
     background: $white;
     display: flex;
@@ -22,6 +22,15 @@
       max-width: 100%;
       height: auto;
       max-height: 100%;
+    }
+  }
+}
+
+// contact page
+.contact-page {
+  .company-cards {
+    .each {
+      margin-bottom: 30px;
     }
   }
 }

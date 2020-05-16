@@ -7149,7 +7149,7 @@
     }
 
     if ($homePageHeroBgEle) {
-      $homePageHeroBgEle.height($(document).width() * 0.606);
+      $homePageHeroBgEle.height($(document).width() * 0.59);
     } // Set height for About us page hero bg
 
 
@@ -7158,6 +7158,14 @@
 
     if ($aboutPageHeroEle && $aboutPageHeroBgEle) {
       $aboutPageHeroEle.css('min-height', $(document).width() * .4);
+    } // Set height for About us page section-5 bg
+
+
+    var $aboutPageSection5Ele = $('#aboutPageSection5');
+    var $aboutPageSection5PosterEle = $('#aboutPageSection5Poster');
+
+    if ($aboutPageSection5Ele && $aboutPageSection5PosterEle) {
+      $aboutPageSection5PosterEle.css('width', $(document).width() * .52);
     } // Set height for Product page hero bg
 
 
@@ -7188,7 +7196,7 @@
 
 
     if (mainHeaderNavEle && !$('body').hasClass('page-template-landing-page')) {
-      $('body').css('padding-top', $(mainHeaderNavEle).outerHeight());
+      $('body').css('padding-top', $(mainHeaderNavEle).outerHeight() - 1);
     } // Add btn class to demo link in header nav
 
 
@@ -7204,6 +7212,11 @@
 
     if ($contactPageHeroEle && $contactPageHeroBgEle) {
       $contactPageHeroBgEle.height($contactPageHeroEle.height() + 130);
+    } // Product features carousel. Set to carousel if table/mobile viewport
+
+
+    if ($(window).width() <= 768) {
+      $('#product-features-carousel').attr('data-ride', 'carousel');
     } // Disabling submit btn on form submission
 
 
@@ -7217,10 +7230,10 @@
 
     document.addEventListener('wpcf7submit', function (event) {
       // Enable form submit btn once submitted
-      $(this).find('.wpcf7-submit').prop('disabled', false).removeClass('btn-loading'); // Id for CTA Form is 63. This needs to be updated in case the actual form is changed in admin
+      $(this).find('.wpcf7-submit').prop('disabled', false).removeClass('btn-loading'); // The ids here need to be updated in case the actual form is changed in admin
 
-      if (event.detail.status === 'mail_sent' && event.detail.contactFormId === '63') {
-        $('#demoSuccessModal').modal();
+      if (event.detail.status === 'mail_sent' && ['63', '468', '258'].indexOf(event.detail.contactFormId) > -1) {
+        $('#formSuccessModal').modal();
       }
     }, false);
     $('.youtube-item').on('click', function () {

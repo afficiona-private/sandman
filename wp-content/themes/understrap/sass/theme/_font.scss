@@ -1,0 +1,24 @@
+body {
+  font-size: 0.875rem;
+}
+
+h1, .h1 {
+  @include font-size($h1-font-size * .5);
+}
+h2, .h2 { @include font-size($h2-font-size * 0.8); }
+h3, .h3 { @include font-size($h3-font-size); }
+h4, .h4 { @include font-size($h4-font-size); }
+h5, .h5 { @include font-size($h5-font-size); }
+h6, .h6 { @include font-size($h6-font-size); }
+
+@include media-breakpoint-up(md) {
+  body {
+    @include font-size($font-size-base);
+  }
+  h1, .h1 { @include font-size($h1-font-size); }
+  h2, .h2 { @include font-size($h2-font-size); }
+  h3, .h3 { @include font-size($h3-font-size); }
+  h4, .h4 { @include font-size($h4-font-size); }
+  h5, .h5 { @include font-size($h5-font-size); }
+  h6, .h6 { @include font-size($h6-font-size); }
+}

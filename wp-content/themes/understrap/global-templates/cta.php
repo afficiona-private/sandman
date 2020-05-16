@@ -21,7 +21,7 @@
               </div>
               <div class="col-lg-7">
                 <div class="form-wrapper wow fadeIn">
-                  <?php echo do_shortcode( '[contact-form-7 id="63" title="CTA Form"]' ); ?>
+                  <?php echo do_shortcode( '[contact-form-7 id="63" title="Request Demo Form"]' ); ?>
                 </div>
               </div>
             </div>

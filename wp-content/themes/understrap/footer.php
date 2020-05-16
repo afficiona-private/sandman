@@ -21,10 +21,11 @@ wp_nav_menu(
 		'walker'          => new Understrap_WP_Bootstrap_Navwalker(),
 	)
 );
+
 ?>
 
 <?php get_template_part( 'global-templates/login-modal' ); ?>
-<?php get_template_part( 'global-templates/demo-success-modal' ); ?>
+<?php get_template_part( 'global-templates/form-success-modal' ); ?>
 <?php if ($post->post_name == 'careers') {
 	get_template_part( 'global-templates/job-apply-modal' );
 } ?>
@@ -35,9 +36,11 @@ wp_nav_menu(
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-4 col-lg-2 pt-5 mb-3 mb-sm-0">
-				<a class="mb-3 mb-sm-5 d-block" href=""><img class="img-fluid" src="http://localhost:8888/wordpress/wp-content/uploads/2020/04/logo.png" alt=""></a>
-				<a class="text-white mb-2 mb-sm-5 d-block" href="mailto:info@sandman.co.in">info@sandman.co.in</a>
-				<a class="text-white" href="">+91 9860486663</a>
+				<div class="mb-2 mb-sm-4">
+					<?php the_custom_logo(); ?>
+				</div>
+				<a class="text-white mb-2 pt-1 mb-sm-4 d-block" href="mailto:<?php echo get_option('site_settings_email') ?>"><?php echo get_option('site_settings_email') ?></a>
+				<a class="text-white pt-2 d-block" href="tel:<?php echo get_option('site_settings_contact_number') ?>"><?php echo get_option('site_settings_contact_number') ?></a>
 			</div>
 
 			<?php
@@ -60,8 +63,10 @@ wp_nav_menu(
 				}
 			?>
 			<div class="col-8 col-sm-6 col-md-4 col-lg-2 pt-5">
-				<p class="text-white">MPM Infosoft Pvt Ltd © 2020</p>
-				<div class="text-white mb-5 d-block" href="">
+				<a href="<?php echo get_option('site_settings_copyright_link') ?>" class="text-white mb-4 pt-3 d-block link-copyright">
+					<?php echo get_option('site_settings_copyright') ?>
+				</a>
+				<div class="text-white mb-5 d-block pt-2">
 					Follow us
 					<?php get_template_part( 'global-templates/follow' ); ?>
 				</div>

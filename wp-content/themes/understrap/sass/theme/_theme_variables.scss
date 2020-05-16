@@ -14,8 +14,10 @@ $body-color: #333333;
 $text-muted: #E1E1E1;
 $gray-100: #F9F9F9;
 $gray-600: #8F8F8F;
-$dark: #182100;
+$dark: #000;
 $link-color: $secondary;
+$dropdown-link-color: $body-color;
+$dropdown-link-hover-color: $secondary;
 
 //grid
 $grid-gutter-width: 24px;
@@ -35,6 +37,7 @@ $h3-font-size:                $font-size-base * 1.75 !default;
 $h4-font-size:                1.125rem !default;
 $h5-font-size:                $font-size-base * 1.25 !default;
 $h6-font-size:                $font-size-base * 1.142857 !default;
+$dropdown-font-size:          0.875rem !default;
 
 // nav
 $navbar-padding-y: 1.094rem;

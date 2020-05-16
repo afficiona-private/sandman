@@ -1,6 +1,20 @@
 .features {
   background: $gray-200;
   padding: 80px 0;
+  @include media-breakpoint-down(md) {
+    padding: 40px 0;
+  }
+
+  .carousel-indicators {
+    bottom: -20px !important;
+    li {
+      background: $secondary;
+      &.active {
+        background: darken($color: $secondary, $amount: 20%);
+      }
+    }
+  }
+
   .nav {
     li {
       margin-bottom: 20px;

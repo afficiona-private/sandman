@@ -10,6 +10,7 @@ defined( 'ABSPATH' ) || exit;
 
 get_header();
 $roi_link = get_permalink( get_page_by_path( 'check-roi' ) );
+$request_demo = get_permalink( get_page_by_path( 'request-demo' ) );
 // WP_Query arguments
 $args = array(
 	'post_type' => 'features_comparison',
@@ -29,11 +30,10 @@ $featurePointsQuery = new WP_Query( $args );
 
             <div class="row">
               <div class="col-lg-10 offset-lg-1">
-                <header class="entry-header">
+                <header class="entry-header d-flex justify-content-between align-items-center">
 
-                  <div class="d-flex align-items-center">
-                    <h1 class="text-primary h2 mb-0"><?php the_title() ?></h1>
-                  </div>
+                  <h1 class="text-primary h2 mb-0"><?php the_title() ?></h1>
+                  <a class="text-uppercase text-secondary d-sm-inline-block d-none" href="<?php echo esc_url( $roi_link ); ?>">Check ROI</a>
 
                 </header><!-- .entry-header -->
 
@@ -140,7 +140,7 @@ $featurePointsQuery = new WP_Query( $args );
 
                 </div><!-- .entry-content -->
 
-                <div class="text-lg-right mt-4">
+                <div class="mt-4 d-sm-none d-inline-block">
                   <a class="text-uppercase text-secondary" href="<?php echo esc_url( $roi_link ); ?>">Check ROI</a>
                 </div>
 
@@ -154,11 +154,15 @@ $featurePointsQuery = new WP_Query( $args );
 
     <div class="container pb-5">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-3">
-          <a class="btn btn-primary btn-block text-uppercase mb-3" href="">Request a Demo</a>
-        </div>
-        <div class="col-12 col-lg-3">
-          <a class="btn btn-primary btn-block text-uppercase" href="">Check ROI</a>
+        <div class="col-12 col-sm-6">
+          <div class="row">
+            <div class="col-12 col-lg-6">
+              <a class="btn btn-primary btn-block text-uppercase mb-3" href="<?php echo esc_url( $request_demo ); ?>">Request a Demo</a>
+            </div>
+            <div class="col-12 col-lg-6">
+              <a class="btn btn-primary btn-block text-uppercase" href="<?php echo esc_url( $roi_link ); ?>">Check ROI</a>
+            </div>
+          </div>
         </div>
       </div>
     </div>
