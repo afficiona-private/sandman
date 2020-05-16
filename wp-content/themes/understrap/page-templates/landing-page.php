@@ -45,8 +45,8 @@ $featured_img = $src[0];
 		<div class="section2" style="background-image: url('<?php echo do_shortcode( '[media-url id="2020/04/Group-423@2x-265x300-1.png"]' ) ?>')">
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-lg-4">
-						<div id="home-about-carousel" class="carousel slide" data-ride="carousel" data-interval="<?php the_field('about_sandman_image_slides_duration'); ?>">
+					<div class="col-lg-4 col-xl-6">
+						<div id="home-about-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="<?php the_field('about_sandman_image_slides_duration'); ?>">
 
 							<!-- The slideshow -->
 							<div class="carousel-inner">
