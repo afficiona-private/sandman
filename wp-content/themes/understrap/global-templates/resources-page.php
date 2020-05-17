@@ -29,6 +29,7 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
 
             $posts = get_posts( array(
               'post_type' => 'post',
+              'posts_per_page' => -1,
               'category_name' => $cat_slug
             ));
             $itemIndex = 0;

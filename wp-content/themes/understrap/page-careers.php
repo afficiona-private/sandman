@@ -5,6 +5,7 @@ defined( 'ABSPATH' ) || exit;
 // WP_Query arguments
 $args = array(
 	'post_type' => 'jobs',
+	'posts_per_page' => -1
 );
 
 $jobsQuery = new WP_Query( $args );

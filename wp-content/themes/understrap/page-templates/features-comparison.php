@@ -13,7 +13,8 @@ $roi_link = get_permalink( get_page_by_path( 'check-roi' ) );
 $request_demo = get_permalink( get_page_by_path( 'request-demo' ) );
 // WP_Query arguments
 $args = array(
-	'post_type' => 'features_comparison',
+  'post_type' => 'features_comparison',
+  'posts_per_page' => -1
 );
 
 $featurePointsQuery = new WP_Query( $args );

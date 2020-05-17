@@ -3,11 +3,10 @@
 defined( 'ABSPATH' ) || exit;
 
 // WP_Query arguments
-$args = array(
+$faqsQuery = get_posts( array(
 	'post_type' => 'faqs',
-);
-
-$faqsQuery = new WP_Query( $args );
+	'posts_per_page' => -1
+));
 
 get_header();
 ?>
@@ -30,19 +29,20 @@ get_header();
 
 								<div class="faqs-wrapper mt-4">
 									<?php
-										while ( $faqsQuery->have_posts() ) : $faqsQuery->the_post();
-										?>
-											<div class="each">
-												<h4 class="each-title pr-4 pr-sm-5 collapsed" data-toggle="collapse" href="#faq-<?php the_id(); ?>" role="button" aria-expanded="false" aria-controls="collapseExample">
-													<?php the_title(); ?>
-												</h4>
-												<div class="collapse" id="faq-<?php the_id(); ?>">
-													<?php the_content(); ?>
+										foreach( $faqsQuery as $post ) {
+											setup_postdata($post);
+											?>
+												<div class="each">
+													<h4 class="each-title pr-4 pr-sm-5 collapsed" data-toggle="collapse" href="#faq-<?php the_id(); ?>" role="button" aria-expanded="false" aria-controls="collapseExample">
+														<?php the_title(); ?>
+													</h4>
+													<div class="collapse" id="faq-<?php the_id(); ?>">
+														<?php the_content(); ?>
+													</div>
 												</div>
-											</div>
-										<?php
-										wp_reset_postdata(); 
-										endwhile;
+											<?php
+											wp_reset_postdata(); 
+										}
 									?>
 								</div>
 								

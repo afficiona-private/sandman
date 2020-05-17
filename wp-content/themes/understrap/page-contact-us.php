@@ -2,7 +2,8 @@
 // Exit if accessed directly.
 defined( 'ABSPATH' ) || exit;
 $args = array(
-	'post_type' => 'locations',
+  'post_type' => 'locations',
+  'posts_per_page' => -1,
 );
 $locationsQuery = new WP_Query( $args );
 get_header();

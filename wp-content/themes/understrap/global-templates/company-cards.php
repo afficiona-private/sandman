@@ -2,6 +2,7 @@
 $cardsType = get_query_var('cards_type');
 $clientCardsQueryArgs = array(
   'post_type' => $cardsType,
+  'posts_per_page' => -1,
   'orderby' => 'menu_order',
   'order' => 'ASC'
 );

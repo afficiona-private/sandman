@@ -24,7 +24,7 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
 					<div class="col-lg-8 offset-lg-2">
 						<header class="entry-header">
 
-							<h1 class="title h3 mb-1"><?php the_title() ?></h1>
+							<h1 class="title h3 mb-5"><?php the_title() ?></h1>
 							<div class="d-sm-flex">
 								<?php
 									if ($cat_slug == 'events') {

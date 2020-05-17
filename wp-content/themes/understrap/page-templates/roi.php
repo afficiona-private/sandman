@@ -13,7 +13,8 @@ $comparison_link = get_permalink( get_page_by_path( 'features-comparison' ) );
 $demo_link = get_permalink( get_page_by_path( 'request-demo' ) );
 // WP_Query arguments
 $args = array(
-	'post_type' => 'roi_records',
+  'post_type' => 'roi_records',
+  'posts_per_page' => -1
 );
 
 $roiTableQuery = new WP_Query( $args );

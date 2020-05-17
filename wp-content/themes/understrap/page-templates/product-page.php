@@ -95,9 +95,8 @@ if ($product_type) {
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-lg-10">
-            <?php 
-
-              $posts = get_field('principles_list');
+            <?php
+              $posts = get_posts( array( 'category_name' => $post->post_name . '-principles' ) );
 
               if( $posts ): ?>
               <?php foreach( $posts as $post): ?>
@@ -154,15 +153,15 @@ if ($product_type) {
           <!-- Hide tabs on mobile and tablet -->
           <div class="col-3 d-none d-md-flex">
             <ul class="nav flex-column">
-              <?php 
-                $posts = get_field('features');
+              <?php
+                $posts = get_posts( array( 'category_name' => $post->post_name . '-features' ) );
                 $index = 0;
                 if( $posts ): ?>
                 <?php foreach( $posts as $post): ?>
                   <?php
                     setup_postdata($post);
                   ?>
-                  <li><a class="<?php echo $index == 0 ? 'active' : '' ?>" data-toggle="tab" href="#feature-item-<?php the_id() ?>"><?php the_field('link_label') ?></a></li>
+                  <li><a class="<?php echo $index == 0 ? 'active' : '' ?>" data-toggle="tab" href="#feature-item-<?php the_id() ?>"><?php the_title() ?></a></li>
                 <?php
                   $index++;
                   endforeach;
@@ -180,8 +179,6 @@ if ($product_type) {
               <div class="d-block d-md-none">
                 <ul class="carousel-indicators">
                   <?php
-
-                    $posts = get_field('features');
                     $index = 0;
                     if( $posts ):
                       foreach( $posts as $post) {
