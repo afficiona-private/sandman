@@ -10,8 +10,8 @@
   <div class="cta">
     <img class="cta-bg" src="<?php echo do_shortcode( '[media-url id="2020/04/Mask-Group-29-1536x783-1.png"]') ?>" alt="bg image" />
     <div class="container">
-      <div class="row">
-        <div class="col-lg-12">
+      <div class="row justify-content-center">
+        <div class="col-sm-10 col-md-12">
           <div class="wrapper">
             <div class="row">
               <div class="col-lg-5">

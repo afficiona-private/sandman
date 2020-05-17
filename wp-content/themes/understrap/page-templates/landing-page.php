@@ -24,8 +24,8 @@ $featured_img = $src[0];
 				<img class="d-none d-sm-block" src="<?php the_field('hero_image') ?>" alt="hero image">
 			</div>
 			<div class="container h-100">
-				<div class="row h-100">
-					<div class="col-12 col-lg-9 col-xl-7 d-flex flex-column">
+				<div class="row h-100 justify-content-sm-center justify-content-md-start">
+					<div class="col-12 col-sm-10 col-lg-9 col-xl-7 d-flex flex-column">
 						<div class="hero-content">
 							<h1 class="title text-white pr-xl-5 mb-lg-5">
 								<?php the_title(); ?>
@@ -164,10 +164,10 @@ $featured_img = $src[0];
 										?>
 											<div class="carousel-item <?php echo $index == 0 ? 'active' : '' ?>">
 												<div class="row">
-													<div class="col-lg-6">
+													<div class="col-sm-6">
 														<img class="img-fluid" src="<?php echo $thumb_url ?>" alt="">
 													</div>
-													<div class="col-lg-6">
+													<div class="col-sm-6">
 														<div class="content h-100 d-flex flex-column">
 															<h3 class="h5 mb-3"><?php the_title() ?></h3>
 															<p><?php the_excerpt() ?></p>
@@ -256,7 +256,7 @@ $featured_img = $src[0];
 				<!-- title ends -->
 
 				<div class="row justify-content-center">
-					<div class="col-md-5">
+					<div class="col-sm-8 col-md-5">
 						<a class="twitter-timeline" data-height="400" data-theme="light" href="https://twitter.com/<?php the_field('twitter_handle'); ?>">Tweets by Sandman</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 					</div>
 				</div>
