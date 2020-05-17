@@ -1,6 +1,8 @@
 .section5 {
   position: relative;
   margin-top: 40px;
+  display: flex;
+  align-items: center;
   @include media-breakpoint-down(sm) {
     background: none;
     padding: 10px 0;
@@ -12,11 +14,11 @@
   }
 
   .poster {
-    width: 100%;
+    width: 50%;
     position: absolute;
     bottom: 0;
     left: 0;
-    @include media-breakpoint-down(sm) {
+    @include media-breakpoint-down(md) {
       position: relative;
       width: 100% !important;
     }

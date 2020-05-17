@@ -1,6 +1,7 @@
 <?php
+$cardsType = get_query_var('cards_type');
 $clientCardsQueryArgs = array(
-  'post_type' => 'clients',
+  'post_type' => $cardsType,
   'orderby' => 'menu_order',
   'order' => 'ASC'
 );

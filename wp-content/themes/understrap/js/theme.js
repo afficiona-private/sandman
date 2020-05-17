@@ -7154,9 +7154,8 @@
 
 
     var $aboutPageHeroEle = $('#aboutPageHero');
-    var $aboutPageHeroBgEle = $('#aboutPageHeroBg');
 
-    if ($aboutPageHeroEle && $aboutPageHeroBgEle) {
+    if ($aboutPageHeroEle) {
       $aboutPageHeroEle.css('min-height', $(document).width() * .4);
     } // Set height for About us page section-5 bg
 
@@ -7165,7 +7164,7 @@
     var $aboutPageSection5PosterEle = $('#aboutPageSection5Poster');
 
     if ($aboutPageSection5Ele && $aboutPageSection5PosterEle) {
-      $aboutPageSection5PosterEle.css('width', $(document).width() * .52);
+      $aboutPageSection5Ele.css('min-height', $(document).width() * .3);
     } // Set height for Product page hero bg
 
 

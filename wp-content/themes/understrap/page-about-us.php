@@ -108,6 +108,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         <div class="row">
           <div class="col-lg-12">
             <h2 class="text-primary h3 text-center mb-4 mb-sm-5"><?php the_field('company_cards_title'); ?></h2>
+            <?php set_query_var('cards_type', 'group-companies'); ?>
             <?php get_template_part( 'global-templates/company-cards' ); ?>
           </div>
         </div>

@@ -46,6 +46,7 @@ get_header();
         <div class="row">
           <div class="col-lg-8">
             <h3 class="text-primary mb-4">Trusted By</h3>
+            <?php set_query_var('cards_type', 'clients'); ?>
             <?php get_template_part( 'global-templates/company-cards' ); ?>
           </div>
           <div class="col-8 col-sm-5 col-md-3 offset-lg-1">

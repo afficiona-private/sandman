@@ -205,6 +205,7 @@ $featured_img = $src[0];
 				<div class="row">
 					<div class="col-lg-12">
 						<h2 class="text-primary h3 text-center mb-5"><?php the_field('clients_title'); ?></h2>
+						<?php set_query_var('cards_type', 'clients'); ?>
 						<?php get_template_part( 'global-templates/company-cards' ); ?>
 					</div>
 				</div>
