@@ -1,5 +1,8 @@
 .principles {
   margin-bottom: 40px;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 150px, 250px;
+  background-position: top left, bottom right;
   .item {
     border: 1px solid #C4D46F;
     display: flex;
@@ -7,6 +10,7 @@
     border-radius: 15px;
     margin-bottom: 30px;
     line-height: 30px;
+    background: $white;
 
     @include media-breakpoint-down(sm) {
       display: block;

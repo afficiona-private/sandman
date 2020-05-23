@@ -24,11 +24,15 @@ if ($product_type) {
     
     <!-- Hero -->
     <div class="hero" id="productPageHero">
-      <img class="hero-bg wow fadeIn" id="productPageHeroBg" src="<?php the_field('hero_image') ?>" />
+      <img
+        class="hero-bg wow fadeIn <?php echo !get_field('hero_content_alignment') ? 'hero-bg--right': '' ?>"
+        id="productPageHeroBg"
+        src="<?php the_field('hero_image') ?>"
+      />
       <div class="container">
-        <div class="row">
-          <div class="col-lg-6 offset-lg-6 wow fadeIn">
-            <h1 class="text-primary h3"><?php the_field('hero_title') ?></h1>
+        <div class="row <?php echo get_field('hero_content_alignment') ? 'justify-content-end': 'justify-content-start' ?>">
+          <div class="col-sm-6 wow fadeIn">
+            <h1 class="text-primary"><?php the_field('hero_title') ?></h1>
             <?php the_field('hero_description') ?>
           </div>
         </div>
@@ -37,45 +41,15 @@ if ($product_type) {
     <!-- Hero ends -->
 
     <!-- Introduction Tabs -->
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <h2 class="h3 text-primary mt-5 mb-3 text-center">
-            <?php the_field('introduction_title') ?>
-          </h2>
-        </div>
-      </div>
-    </div>
-    <div class="wrapper text-center">
+    <div class="introduction-section text-center">
       <div class="container">
-        <div class="product-tabs">
-          <div class="row justify-content-center wow fadeInUp">
-            <div class="col-6 col-lg-3">
-              <a
-                class="tab <?php echo $product_type === 'sandman' ? 'tab-active' : '' ?>"
-                href="<?php the_permalink( get_page_by_path( 'product-sandman' ) ) ?>"
-              >
-                <img class="img-fluid" src="<?php the_field('sandman_image') ?>" alt="Sandman" />
-              </a>
-            </div>
-            <div class="col-6 col-lg-3">
-              <a
-                class="tab <?php echo $product_type === 'digismart' ? 'tab-active' : '' ?>"
-                href="<?php the_permalink( get_page_by_path( 'product-digismart' ) ) ?>"
-              >
-                <img class="img-fluid" src="<?php the_field('digismart_image') ?>" alt="Digismart" />
-                </a>
-            </div>
-          </div>
-        </div>
-
         <div class="row wow fadeInUp" data-wow-delay=".4s">
           <div class="col-12">
-            <h2 class="text-white mb-3 mt-4"><?php the_field('product_title') ?></h2>
+            <h2 class="text-white mb-3"><?php the_field('product_title') ?></h2>
           </div>
         </div>
         <div class="row justify-content-center wow fadeIn" data-wow-delay=".7s">
-          <div class="col-lg-8 text-white">
+          <div class="col-sm-8 text-white">
             <?php the_field('product_description') ?>
           </div>
         </div>
@@ -91,10 +65,13 @@ if ($product_type) {
         </div>
       </div>
     </div>
-    <div class="principles">
+    <div
+      class="principles"
+      style="background-image: url('<?php echo do_shortcode( '[media-url id="2020/05/Path-921.png"]' ) ?>'), url('<?php echo do_shortcode( '[media-url id="2020/05/Path-836.png"]' ) ?>')"
+    >
       <div class="container">
         <div class="row justify-content-center">
-          <div class="col-lg-10">
+          <div class="col-sm-8 col-lg-10">
             <?php
               $posts = get_posts( array( 'category_name' => $post->post_name . '-principles' ) );
 
@@ -124,32 +101,15 @@ if ($product_type) {
     </div>
     <!-- Principles ends -->
 
-    <!-- CTA -->
-    <div class="container mb-5 wow fadeIn">
-      <div class="row justify-content-center">
-        <div class="col-12 col-lg-4">
-          <a class="btn btn-primary btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'features-comparison' ) ) ?>">
-            Compare Digismart & Pro
-          </a>
-        </div>
-        <div class="col-12 col-lg-4">
-          <a class="btn btn-primary btn-block" href="<?php the_permalink( get_page_by_path( 'check-roi' ) ) ?>">
-            Check ROI
-          </a>
-        </div>
-      </div>
-    </div>
-    <!-- CTA ends -->
-
     <!-- Features -->
     <div class="features">
       <div class="container">
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 text-center text-md-left">
             <h2 class="mb-4 wow fadeIn"><?php the_field('features_title'); ?></h2>
           </div>
         </div>
-        <div class="row wow fadeIn" data-wow-delay=".4s">
+        <div class="row wow fadeIn justify-content-center" data-wow-delay=".4s">
           <!-- Hide tabs on mobile and tablet -->
           <div class="col-3 d-none d-md-flex">
             <ul class="nav flex-column">
@@ -170,9 +130,9 @@ if ($product_type) {
               <?php endif; ?>
             </ul>
           </div>
-          <div class="col-12 col-md-9">
+          <div class="col-12 col-sm-8 col-md-9">
 
-            <!-- Carousel on mobile/tablet and tab on desktops -->
+            <!-- Carousel on mobile/tablet and tabs on desktop -->
             <div id="product-features-carousel" class="tab-content carousel slide" data-ride="">
 
               <!-- Indicators -->
@@ -237,17 +197,17 @@ if ($product_type) {
     <!-- CTA -->
     <div class="container mt-5 mb-5 wow fadeIn">
       <div class="row justify-content-center">
-        <div class="col-12 col-lg-3">
+        <div class="col-12 col-sm-4 col-lg-3">
           <a class="btn btn-outline-primary btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'features-comparison' ) ) ?>">
             Compare Digismart & Pro
           </a>
         </div>
-        <div class="col-12 col-lg-3">
+        <div class="col-12 col-sm-4 col-lg-3">
           <a class="btn btn-primary btn-block mb-3 mb-lg-0" href="<?php the_permalink( get_page_by_path( 'request-demo' ) ) ?>">
             Request a Demo
           </a>
         </div>
-        <div class="col-12 col-lg-3">
+        <div class="col-12 col-sm-4 col-lg-3">
           <a class="btn btn-outline-primary btn-outline btn-block" href="<?php the_permalink( get_page_by_path( 'check-roi' ) ) ?>">
             Check ROI
           </a>

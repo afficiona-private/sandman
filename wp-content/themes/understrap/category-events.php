@@ -29,7 +29,7 @@ $pastPosts = new WP_Query( array(
   'category_name' => 'events',
   'post_status' => 'publish',
 ));
-$futurePostsPresent = $futurePosts->have_posts();
+$futurePostsPresent = true;
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
@@ -99,10 +99,10 @@ $futurePostsPresent = $futurePosts->have_posts();
                                 <div class="col-lg-6">
                                   <div class="content d-flex flex-column h-100 pt-3 pt-md-0 pl-md-4">
                                     <h2 class="mb-3 text-primary"><?php the_title(); ?></h2>
-                                    <?php the_content(); ?>
+                                    <?php the_excerpt(); ?>
                                     <p class="mb-0 mt-4 font-weight-bold mt-auto"><?php the_field('event_date_label'); ?></p>
                                     <p class="font-weight-bold"><?php the_field('event_location'); ?></p>
-                                    <a class="text-secondary text-uppercase" href="<?php echo the_permalink(); ?>">Read More</a>
+                                    <a class="text-secondary text-uppercase" href="<?php the_permalink(); ?>">Read More</a>
                                   </div>
                                 </div>
                               </div>
@@ -162,8 +162,8 @@ $futurePostsPresent = $futurePosts->have_posts();
                           <?php the_field('event_date_label'); ?> &nbsp; | &nbsp;
                           <?php the_field('event_location'); ?>
                         </p>
-                        <?php the_content(); ?>
-                        <a class="text-secondary text-uppercase mt-auto" href="<?php echo the_permalink(); ?>">Read More</a>
+                        <?php the_excerpt(); ?>
+                        <a class="text-secondary text-uppercase mt-auto" href="<?php the_permalink(); ?>">Read More</a>
                       </div>
                     </div>
                   </div>

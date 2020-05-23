@@ -89,7 +89,7 @@ $container = get_theme_mod( 'understrap_container_type' );
         <img id="aboutPageSection5Poster" class="poster wow fadeIn" src="<?php the_field('fifth_section_image') ?>" />
         <div class="container">
           <div class="row">
-            <div class="col-lg-6 offset-lg-6">
+            <div class="col-md-6 offset-md-6">
               <div class="content wow fadeIn">
                 <h2 class="text-primary mb-4">
                   <?php the_field('fifth_section_title'); ?>

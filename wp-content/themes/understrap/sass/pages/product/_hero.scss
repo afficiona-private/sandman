@@ -9,9 +9,13 @@
     width: 60%;
     top: 0;
     left: 0;
+    &--right {
+      left: auto;
+      right: 0;
+    }
   }
 
-  @include media-breakpoint-down(sm) {
+  @include media-breakpoint-down(xs) {
     padding: 0 0 20px;
     min-height: auto !important;
     display: block;

@@ -43,7 +43,7 @@ $featured_image_url = get_field('featured_image', $category[0])['url'];
 
 							<?php the_content(); ?>
 
-							<p class="text-sm-right">
+							<p class="text-center mt-5 pt-5">
 								<a class="text-secondary text-uppercase ml-auto" href="<?php echo esc_url( $category_link ); ?>">All <?php echo $cat_name; ?></a>
 							</p>
 

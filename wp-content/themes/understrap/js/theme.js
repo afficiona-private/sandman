@@ -7172,7 +7172,7 @@
     var $productPageHeroBgEle = $('#productPageHeroBg');
 
     if ($productPageHeroEle && $productPageHeroBgEle) {
-      $productPageHeroEle.css('min-height', $(document).width() * .4);
+      $productPageHeroEle.css('min-height', $(document).width() * .42);
     } // Check scroll pos of document and add class to header nav for visibility in home page
 
 
@@ -7210,7 +7210,7 @@
     var $contactPageHeroBgEle = $('#contactPageHeroBg');
 
     if ($contactPageHeroEle && $contactPageHeroBgEle) {
-      $contactPageHeroBgEle.height($contactPageHeroEle.height() + 130);
+      $contactPageHeroBgEle.height($contactPageHeroEle.height() + 280);
     } // Product features carousel. Set to carousel if table/mobile viewport
 
 

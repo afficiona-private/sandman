@@ -1,14 +1,18 @@
   <?php
     $demoPageQuery = new WP_Query( 'pagename=request-demo' );
     $title = '';
+    $illustration_image = '';
+    $bg_image = '';
     while ( $demoPageQuery->have_posts() ) : $demoPageQuery->the_post();
-        $title = get_the_content();
+      $title = get_the_content();
+      $illustration_image = get_field('illustration_image');
+      $bg_image = get_field('background_image');
     endwhile;
     wp_reset_postdata();
 ?>
   
   <div class="cta">
-    <img class="cta-bg" src="<?php echo do_shortcode( '[media-url id="2020/04/Mask-Group-29-1536x783-1.png"]') ?>" alt="bg image" />
+    <img class="cta-bg" src="<?php echo $bg_image; ?>" alt="bg image" />
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-sm-10 col-md-12">
@@ -18,6 +22,7 @@
                 <h2 class="text-white mb-4 mb-lg-0 wow fadeIn">
                   <?php echo $title; ?>
                 </h2>
+                <img class="cta__illustration mt-3 mb-3" src="<?php echo $illustration_image; ?>" alt="illustration" />
               </div>
               <div class="col-lg-7">
                 <div class="form-wrapper wow fadeIn">

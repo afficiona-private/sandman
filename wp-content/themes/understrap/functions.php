@@ -37,7 +37,8 @@ foreach ( $understrap_includes as $file ) {
 function modify_link_in_social_menu_objects( $items, $args ) {
 	if ($args->slug == 'social-links') {
 		foreach ( $items as $k => $object ) {
-			$object->title = '<i class="fa fa-' . $object->post_name .'"></i>';
+			$icon = get_field('fa_icon', $object);
+			$object->title = '<i class="fa fa-' . $icon .'"></i>';
 		}
 	}
 	return $items;
@@ -71,5 +72,28 @@ function add_additional_class_on_li($classes, $item, $args) {
     return $classes;
 }
 add_filter('nav_menu_css_class', 'add_additional_class_on_li', 1, 3);
+
+function future_permalink( $permalink, $post, $leavename ) {
+	/* for filter recursion (infinite loop) */
+	static $recursing = false;
+
+	if ( empty( $post->ID ) ) {
+		return $permalink;
+	}
+
+	if ( !$recursing ) {
+		if ( isset( $post->post_status ) && ( 'future' === $post->post_status ) ) {
+			// set the post status to publish to get the 'publish' permalink
+			$post->post_status = 'publish';
+			$recursing = true;
+			return get_permalink( $post, $leavename ) ;
+		}
+	}
+
+	$recursing = false;
+	return $permalink;
+}
+
+add_filter( 'post_link', 'future_permalink', 10, 3 );
 
 wp_enqueue_script( 'wowjs', 'https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js', array(), false, true );

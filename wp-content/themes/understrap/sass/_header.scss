@@ -118,11 +118,13 @@
         &:hover {
           color: $secondary;
         }
-        @include media-breakpoint-up(sm) {
+        @include media-breakpoint-up(md) {
           margin-left: 2rem;
+        }
+        @include media-breakpoint-up(sm) {
+          width: auto;
           padding-left: 2rem;
           padding-right: 2rem;
-          width: auto;
         }
       }
     }

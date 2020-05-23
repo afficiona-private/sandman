@@ -245,7 +245,10 @@ $featured_img = $src[0];
 		<!-- Section 6 ends -->
 		
 		<!-- Section 7 -->
-		<div class="section7">
+		<div
+			class="section7"
+			style="background-image: url('<?php echo do_shortcode( '[media-url id="2020/05/Group-432.png"]' ) ?>'), url('<?php echo do_shortcode( '[media-url id="2020/05/Group-431-e1590220846683.png"]' ) ?>')"
+		>
 			<div class="container">
 
 				<!-- title -->
