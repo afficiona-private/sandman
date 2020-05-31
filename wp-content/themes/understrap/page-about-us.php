@@ -34,10 +34,10 @@ $container = get_theme_mod( 'understrap_container_type' );
             <div class="col-lg-5 wow fadeIn">
               <div class="d-flex flex-column align-items-center">
                 <img class="img-fluid wow fadeIn" src="<?php the_field('second_section_image') ?>" alt="data right image">
-                <h2 class="text-primary mt-4 wow slideInUp"><?php the_field('second_section_title'); ?></h2>
               </div>
             </div>
             <div class="col-lg-5 wow fadeIn" data-wow-delay=".4s">
+              <h2 class="text-primary mb-4 wow slideInUp"><?php the_field('second_section_title'); ?></h2>
               <?php the_field('second_section_description'); ?>
             </div>
           </div>

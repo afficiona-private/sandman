@@ -30,7 +30,7 @@ $container = get_theme_mod( 'understrap_container_type' );
 
 		<a class="skip-link sr-only sr-only-focusable" href="#content"><?php esc_html_e( 'Skip to content', 'understrap' ); ?></a>
 
-		<nav class="navbar fixed-top navbar-expand-xl navbar-dark <?php echo $post->post_name != 'home' ? 'bg-dark' : '' ?>" id="mainHeaderNav">
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark <?php echo $post->post_name != 'home' ? 'bg-dark' : '' ?>" id="mainHeaderNav">
 
 		<?php if ( 'container' == $container ) : ?>
 			<div class="container">

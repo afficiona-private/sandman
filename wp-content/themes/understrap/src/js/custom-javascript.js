@@ -11,12 +11,9 @@
 
     // Set height for home page hero bg
     var $homePageHeroEle = $('#homePageHero');
-    var $homePageHeroBgEle = $('#homePageHeroBg');
+    var $homePageHeroTitleEle = $('#homeHeroTitle');
     if ($homePageHeroEle) {
       $homePageHeroEle.height($(document).width() * 0.606);
-    }
-    if ($homePageHeroBgEle) {
-      $homePageHeroBgEle.height($(document).width() * 0.59);
     }
 
     // Set height for About us page hero bg
@@ -42,11 +39,11 @@
     // Check scroll pos of document and add class to header nav for visibility in home page
     var mainHeaderNavEle = document.getElementById("mainHeaderNav");
     if ($('body').hasClass('page-template-landing-page')) {
-      if ($homePageHeroEle && mainHeaderNavEle) {
-        $(mainHeaderNavEle).toggleClass('bg-dark', $(document).scrollTop() > $homePageHeroEle.height());
+      if ($homePageHeroTitleEle && mainHeaderNavEle) {
+        $(mainHeaderNavEle).toggleClass('bg-dark', $(document).scrollTop() > $homePageHeroTitleEle.offset().top);
       };
       $(document).on('scroll', function (e) {
-        if ($(this).scrollTop() > $homePageHeroEle.height() - 200) {
+        if ($(this).scrollTop() > $homePageHeroTitleEle.offset().top - 100) {
           $(mainHeaderNavEle).addClass('bg-dark');
         } else {
           $(mainHeaderNavEle).removeClass('bg-dark');

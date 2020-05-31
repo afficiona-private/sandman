@@ -24,10 +24,10 @@ $featured_img = $src[0];
 				<img class="d-none d-sm-block" src="<?php the_field('hero_image') ?>" alt="hero image">
 			</div>
 			<div class="container h-100">
-				<div class="row h-100 justify-content-sm-center justify-content-md-start">
+				<div class="row h-100 justify-content-sm-center justify-content-xl-start">
 					<div class="col-12 col-sm-10 col-lg-9 col-xl-7 d-flex flex-column">
 						<div class="hero-content">
-							<h1 class="title text-white pr-xl-5 mb-lg-5">
+							<h1 class="title text-white pr-xl-5 mb-lg-5" id="homeHeroTitle">
 								<?php the_title(); ?>
 							</h1>
 							<div class="description text-white">
@@ -124,7 +124,7 @@ $featured_img = $src[0];
 				</div>
 				<div class="row">
 					<div class="col-lg-12">
-						<div id="case-study-carousel" class="carousel slide" data-ride="carousel">
+						<div id="case-study-carousel" class="carousel slide mx-2" data-ride="carousel">
 
 							<!-- Indicators -->
 							<ul class="carousel-indicators">
