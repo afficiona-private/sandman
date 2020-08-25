@@ -3,10 +3,12 @@
   margin-top: 40px;
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
   @include media-breakpoint-down(sm) {
     background: none;
     padding: 10px 0;
     margin-top: 0;
+    margin-bottom: 0;
   }
 
   .content {
@@ -14,10 +16,7 @@
   }
 
   .poster {
-    width: 50%;
-    position: absolute;
-    bottom: 0;
-    left: 0;
+    width: auto;
   }
 
   @include media-breakpoint-down(sm) {

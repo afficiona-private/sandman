@@ -10,7 +10,7 @@
 .navbar-brand {
   padding-bottom: 10px;
   img {
-    width: 124px;
+    width: 150px;
   }
   @include media-breakpoint-down(sm) {
     margin-left: 8px;
@@ -104,7 +104,7 @@
   }
   .nav-link {
     font-weight: 600;
-    font-family: Circular Black;
+    font-family: Whitney Bold;
     transition: .2s all;
     font-size: 0.875rem;
     text-transform: uppercase;
@@ -129,4 +129,16 @@
       }
     }
   }
+}
+
+// headroom
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
 }

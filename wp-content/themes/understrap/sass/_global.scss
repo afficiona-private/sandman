@@ -2,8 +2,9 @@ a {
   transition: 0.2s all;
   &:hover {
     text-decoration: none;
+    color: $secondary !important;
   }
-  font-family: Circular Bold;
+  font-family: Whitney Bold;
 }
 
 .btn {

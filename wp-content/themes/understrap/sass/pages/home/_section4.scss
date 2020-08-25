@@ -7,9 +7,10 @@
   }
 
   .carousel {
-    background: $white;
-    border-radius: 15px;
     &-item {
+      background: $white;
+      border-radius: 15px;
+      overflow: hidden;
       > img {
         max-width: 100%;
         height: auto;

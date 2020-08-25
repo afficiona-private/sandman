@@ -7187,8 +7187,11 @@
           $(mainHeaderNavEle).removeClass('bg-dark');
         }
       });
-    } // Add padding to body if not home page to adjust sticky navbar
+    } // headroom
 
+
+    var headroom = new Headroom(mainHeaderNavEle);
+    headroom.init(); // Add padding to body if not home page to adjust sticky navbar
 
     if (mainHeaderNavEle && !$('body').hasClass('page-template-landing-page')) {
       $('body').css('padding-top', $(mainHeaderNavEle).outerHeight() - 1);
@@ -7206,7 +7209,7 @@
     var $contactPageHeroBgEle = $('#contactPageHeroBg');
 
     if ($contactPageHeroEle && $contactPageHeroBgEle) {
-      $contactPageHeroBgEle.height($contactPageHeroEle.height() + 280);
+      $contactPageHeroBgEle.height($contactPageHeroEle.height() + 200);
     } // Product features carousel. Set to carousel if table/mobile viewport
 
 

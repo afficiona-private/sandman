@@ -1,6 +1,12 @@
 .section6 {
   padding: 80px 0 0;
 
+  .insights-cta-link {
+    &:hover {
+      color: $secondary !important;
+    }
+  }
+
   .youtube-item {
     border: 1px solid #efefef;
     border-radius: 6px;

@@ -83,8 +83,8 @@ $nonFeaturedInsightQuery = new WP_Query( $nonFeaturedInsightsArgs );
   </div>
 
   <div class="col-12">
-    <a class="text-sm-right d-block mt-2 mt-md-4 text-uppercase text-dark" target="_blank" href="<?php the_field('youtube_channel'); ?>">
-      Visit our YouTube Channel for more
+    <a class="text-sm-right d-block mt-2 mt-md-4 text-uppercase text-dark insights-cta-link" target="_blank" href="<?php the_field('youtube_channel'); ?>">
+      <?php the_field('youtube_channel_cta'); ?>
     </a>
   </div>
   

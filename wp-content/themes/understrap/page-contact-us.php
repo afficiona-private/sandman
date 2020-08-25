@@ -14,7 +14,11 @@ get_header();
     
     <!-- Hero -->
     <div class="hero">
-      <div class="hero-bg" id="contactPageHeroBg"></div>
+      <div
+        class="hero-bg"
+        id="contactPageHeroBg"
+        style="background-image: url(<?php the_field('hero_image') ?>)"
+      ></div>
       <div class="container">
         <div class="row">
           <div class="col-lg-4 text-white">

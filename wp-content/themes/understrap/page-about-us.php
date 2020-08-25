@@ -86,10 +86,12 @@ $container = get_theme_mod( 'understrap_container_type' );
 
     <!-- Section 5 -->
       <div class="section5" id="aboutPageSection5">
-        <img id="aboutPageSection5Poster" class="poster wow fadeIn" src="<?php the_field('fifth_section_image') ?>" />
         <div class="container">
-          <div class="row">
-            <div class="col-md-6 offset-md-6">
+          <div class="row align-items-center">
+            <div class="col-md-6">
+              <img class="poster wow fadeIn" src="<?php the_field('fifth_section_image') ?>" />
+            </div>
+            <div class="col-md-6">
               <div class="content wow fadeIn">
                 <h2 class="text-primary mb-4">
                   <?php the_field('fifth_section_title'); ?>

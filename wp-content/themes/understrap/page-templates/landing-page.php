@@ -25,7 +25,7 @@ $featured_img = $src[0];
 			</div>
 			<div class="container h-100">
 				<div class="row h-100 justify-content-sm-center justify-content-xl-start">
-					<div class="col-12 col-sm-10 col-lg-9 col-xl-7 d-flex flex-column">
+					<div class="col-12 col-sm-10 col-lg-9 col-xl-6 d-flex flex-column">
 						<div class="hero-content">
 							<h1 class="title text-white pr-xl-5 mb-lg-5" id="homeHeroTitle">
 								<?php the_title(); ?>
@@ -46,7 +46,7 @@ $featured_img = $src[0];
 			<div class="container">
 				<div class="row justify-content-center">
 					<div class="col-lg-4 col-xl-6">
-						<div id="home-about-carousel" class="carousel slide carousel-fade" data-ride="carousel" data-interval="<?php the_field('about_sandman_image_slides_duration'); ?>">
+						<div id="home-about-carousel" class="carousel carousel-fade" data-ride="carousel" data-interval="<?php the_field('about_sandman_image_slides_duration'); ?>">
 
 							<!-- The slideshow -->
 							<div class="carousel-inner">

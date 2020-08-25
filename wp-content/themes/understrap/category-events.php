@@ -29,7 +29,6 @@ $pastPosts = new WP_Query( array(
   'category_name' => 'events',
   'post_status' => 'publish',
 ));
-$futurePostsPresent = true;
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">
